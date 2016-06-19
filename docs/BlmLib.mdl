@@ -1,0 +1,6663 @@
+
+(object Petal
+    version    	50
+    _written   	"Rose 2006.0.0.060314"
+    charSet    	134)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    attributes 	(list Attribute_Set
+	(object Attribute
+	    tool       	"Java"
+	    name       	"IDE"
+	    value      	"Internal Editor")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagName1"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagText1"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagApply1"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagName2"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagText2"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagApply2"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagName3"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagText3"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagApply3"
+	    value      	""))
+    quid       	"5149A23A0115"
+    enforceClosureAutoLoad 	FALSE
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	0
+	gridY      	0
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	3
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"5149A23A0117"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"5149A23B029A"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"5149A23A0116"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"5149A23A0118"
+	logical_models 	(list unit_reference_list
+	    (object Class_Category "C++ Reverse Engineered"
+		quid       	"5149A6EF025D"
+		exportControl 	"Public"
+		logical_models 	(list unit_reference_list
+		    (object Class_Category "BlmComm"
+			attributes 	(list Attribute_Set
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"IsNamespace"
+				value      	TRUE))
+			quid       	"5167A1B1023D"
+			exportControl 	"Public"
+			logical_models 	(list unit_reference_list
+			    (object Class "BlmClient"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Cplusplus"
+					name       	"HeaderSourceFile"
+					value      	"include\\blm\\blmcomm.h"))
+				quid       	"5167A1B1023F"
+				documentation 	
+|//用户可以使用这个类与服务器通信，发送请求，处理数据
+|
+				
+				stereotype 	"Interface"
+				operations 	(list Operations
+				    (object Operation "processMsg"
+					quid       	"5167A1B1030D"
+					documentation 	
+|//以下函数供clientTcp调用
+|
+					
+					parameters 	(list Parameters
+					    (object Parameter "mt"
+						quid       	"5167A1B1030E"
+						type       	"int")
+					    (object Parameter "st"
+						quid       	"5167A1B1030F"
+						type       	"int")
+					    (object Parameter "data"
+						quid       	"5167A1B10310"
+						type       	"const string&")
+					    (object Parameter "msgid"
+						quid       	"5167A1B10311"
+						type       	"int"))
+					result     	"int"
+					concurrency 	"Sequential"
+					opExportControl 	"Private"
+					uid        	0)
+				    (object Operation "onConnect"
+					quid       	"5167A1B10317"
+					parameters 	(list Parameters
+					    (object Parameter "tcp"
+						quid       	"516CE97101C8"
+						type       	"PjTcp*"))
+					result     	"int"
+					concurrency 	"Sequential"
+					opExportControl 	"Private"
+					uid        	0)
+				    (object Operation "onClose"
+					quid       	"5167A1B10318"
+					parameters 	(list Parameters
+					    (object Parameter "tcp"
+						quid       	"516CE9710216"
+						type       	"PjTcp*"))
+					result     	"int"
+					concurrency 	"Sequential"
+					opExportControl 	"Private"
+					uid        	0)
+				    (object Operation "BlmClient"
+					quid       	"5167A1B10319"
+					parameters 	(list Parameters
+					    (object Parameter "poller1"
+						quid       	"5167A1B1031A"
+						type       	"BlmIoqueue*"
+						quidu      	"5167A1B1025D"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "~BlmClient"
+					quid       	"5167A1B1031B"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "connect"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"5167A1B1031C"
+					documentation 	
+|//与服务器建立连接
+|
+					
+					parameters 	(list Parameters
+					    (object Parameter "ip"
+						quid       	"5167A1B1031D"
+						type       	"const char*")
+					    (object Parameter "port"
+						quid       	"5167A1B1031E"
+						type       	"short"))
+					result     	"void"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "disconnect"
+					quid       	"5167A1B1031F"
+					documentation 	
+|//断开连接
+|
+					
+					result     	"void"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "sendMsg"
+					quid       	"5167A1B10320"
+					documentation 	
+|//发送请求
+|
+					
+					parameters 	(list Parameters
+					    (object Parameter "mt"
+						quid       	"5167A1B10321"
+						type       	"int")
+					    (object Parameter "st"
+						quid       	"5167A1B10327"
+						type       	"int")
+					    (object Parameter "data"
+						quid       	"5167A1B10328"
+						type       	"const char*")
+					    (object Parameter "sz"
+						quid       	"5167A1B10329"
+						type       	"int"))
+					result     	"int"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "removeCallback"
+					quid       	"5167A1B1032A"
+					documentation 	
+|//注销回调，传入的参数为注册回调时返回的指针
+|//成功返回0，失败返回-1
+|
+					
+					parameters 	(list Parameters
+					    (object Parameter "cb"
+						quid       	"5167A1B1032B"
+						type       	"void*"))
+					result     	"int"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "removeObjCallbacks"
+					quid       	"5167A1B1032C"
+					documentation 	
+|//注销与此对象相关的所有回调，传入的参数为注册回调时所使用的obj参数
+|//返回移除的callback个数
+|
+					
+					parameters 	(list Parameters
+					    (object Parameter "obj"
+						quid       	"5167A1B1032D"
+						type       	"void*"))
+					result     	"int"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "connectFastest"
+					quid       	"516CE9710264"
+					documentation 	
+|//选择最快的服务器连接，ips参数为 "ip1 ip2 ip3"
+|
+					
+					parameters 	(list Parameters
+					    (object Parameter "ips"
+						quid       	"516CE9710292"
+						type       	"const char*")
+					    (object Parameter "port"
+						quid       	"516CE97102E2"
+						type       	"short"))
+					result     	"void"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "clientTcp"
+					quid       	"5167A1B102E8"
+					type       	"ClientTcp*")
+				    (object ClassAttribute "connCallbacks"
+					quid       	"5167A1B102EE"
+					type       	"list<SimpleCallback*>")
+				    (object ClassAttribute "closeCallbacks"
+					quid       	"5167A1B102F8"
+					type       	"list<SimpleCallback*>")
+				    (object ClassAttribute "tcpCandidates"
+					quid       	"516CE971017F"
+					type       	"vector<ClientTcp*>"))
+				module     	"Component View::BlmLib"
+				quidu      	"5149A6410060"
+				language   	"ANSI C++"
+				nestedClasses 	(list nestedClasses
+				    (object Class "MsgMap"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"HeaderSourceFile"
+						value      	"include\\blm\\blmcomm.h")
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"ImplementationType"
+						value      	"map<int, list<MsgCallback*> >"))
+					quid       	"5167A1B1024C"
+					stereotype 	"typedef"
+					exportControl 	"Private"
+					module     	"Component View::BlmLib"
+					quidu      	"5149A6410060")))
+			    (object Class "BlmIoqueue"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Cplusplus"
+					name       	"HeaderSourceFile"
+					value      	"include\\blm\\blmcomm.h"))
+				quid       	"5167A1B1025D"
+				documentation 	
+|//IO队列，用户可以在此注册定时器函数
+|
+				
+				stereotype 	"Interface"
+				superclasses 	(list inheritance_relationship_list
+				    (object Inheritance_Relationship
+					quid       	"516CE971033D"
+					supplier   	"Logical View::C++ Reverse Engineered::BlmComm::MemPool"
+					quidu      	"516CE9710087"
+					exportControl 	"Private"))
+				operations 	(list Operations
+				    (object Operation "addTimerCallback_imp"
+					quid       	"5167A1B10347"
+					parameters 	(list Parameters
+					    (object Parameter "interval"
+						quid       	"5167A1B10348"
+						type       	"int")
+					    (object Parameter "scb"
+						quid       	"5167A1B10356"
+						type       	"SimpleCallback*"))
+					result     	"void*"
+					concurrency 	"Sequential"
+					opExportControl 	"Private"
+					uid        	0)
+				    (object Operation "wget_imp"
+					quid       	"5167A1B10357"
+					parameters 	(list Parameters
+					    (object Parameter "url"
+						quid       	"5167A1B10358"
+						type       	"const char*")
+					    (object Parameter "dcb"
+						quid       	"5167A1B10359"
+						type       	"DataCallback*")
+					    (object Parameter "millsec"
+						quid       	"5167A1B1035A"
+						type       	"int"))
+					result     	"void"
+					concurrency 	"Sequential"
+					opExportControl 	"Private"
+					uid        	0)
+				    (object Operation "BlmIoqueue"
+					quid       	"5167A1B1035B"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "~BlmIoqueue"
+					quid       	"5167A1B1035C"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "poll"
+					quid       	"5167A1B1035D"
+					documentation 	
+|//轮询网络数据，调用数据处理的回调，轮询定时器，调用超时的定时器，如果没有数据，则最多等待milliseconds毫秒
+|
+					
+					parameters 	(list Parameters
+					    (object Parameter "milliseconds"
+						quid       	"5167A1B1035E"
+						type       	"int"
+						initv      	"0"))
+					result     	"void"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "removeTimer"
+					quid       	"5167A1B1035F"
+					documentation 	
+|//注销回调
+|//成功返回0，失败返回-1
+|
+					
+					parameters 	(list Parameters
+					    (object Parameter "timer"
+						quid       	"5167A1B10360"
+						type       	"void*"))
+					result     	"int"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "removeObjTimers"
+					quid       	"5167A1B10361"
+					documentation 	
+|//注销与此对象相关的所有回调，传入的参数为注册回调时所使用的obj参数
+|//返回移除的timer个数
+|
+					
+					parameters 	(list Parameters
+					    (object Parameter "obj"
+						quid       	"5167A1B10365"
+						type       	"void*"))
+					result     	"int"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "timer_heap"
+					quid       	"5167A1B10336"
+					type       	"pj_timer_heap_t *")
+				    (object ClassAttribute "ioque"
+					quid       	"5167A1B10337"
+					type       	"pj_ioqueue_t *")
+				    (object ClassAttribute "timerCallbacks"
+					quid       	"5167A1B10346"
+					type       	"vector<TimerObj*>"))
+				module     	"Component View::BlmLib"
+				quidu      	"5149A6410060"
+				language   	"ANSI C++")
+			    (object Class "SingleComm"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Cplusplus"
+					name       	"UnresolvedBases"
+					value      	"=Singleton<SingleComm>%Public%False")
+				    (object Attribute
+					tool       	"Cplusplus"
+					name       	"HeaderSourceFile"
+					value      	"include\\blm\\blmcomm.h"))
+				quid       	"5167A1B1025E"
+				stereotype 	"struct"
+				superclasses 	(list inheritance_relationship_list
+				    (object Inheritance_Relationship
+					quid       	"5167A1B10367"
+					supplier   	"Logical View::C++ Reverse Engineered::BlmComm::BlmIoqueue"
+					quidu      	"5167A1B1025D")
+				    (object Inheritance_Relationship
+					quid       	"5167A1B10368"
+					supplier   	"Logical View::C++ Reverse Engineered::BlmComm::BlmClient"
+					quidu      	"5167A1B1023F"))
+				realized_interfaces 	(list realize_rel_list
+				    (object Realize_Relationship
+					quid       	"5167A24202A6"
+					supplier   	"Logical View::C++ Reverse Engineered::BlmComm::BlmIoqueue"
+					quidu      	"5167A1B1025D")
+				    (object Realize_Relationship
+					quid       	"5167A245011B"
+					supplier   	"Logical View::C++ Reverse Engineered::BlmComm::BlmClient"
+					quidu      	"5167A1B1023F"))
+				operations 	(list Operations
+				    (object Operation "SingleComm"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"5167A1B10369"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "removeObj"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"5167A1B1036A"
+					parameters 	(list Parameters
+					    (object Parameter "obj"
+						quid       	"5167A1B1036B"
+						type       	"void*"))
+					result     	"int"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				module     	"Component View::BlmLib"
+				quidu      	"5149A6410060"
+				language   	"ANSI C++")
+			    (object Class "AES128Cipher"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Cplusplus"
+					name       	"HeaderSourceFile"
+					value      	"include\\blm\\blmutil.h"))
+				quid       	"516CE971005B"
+				documentation 	
+|//AES 128 cbc
+|
+				
+				operations 	(list Operations
+				    (object Operation "doAES128"
+					quid       	"516CE971012E"
+					parameters 	(list Parameters
+					    (object Parameter "in"
+						quid       	"516CE9710130"
+						type       	"const char*")
+					    (object Parameter "len"
+						quid       	"516CE9710131"
+						type       	"int")
+					    (object Parameter "encrypt"
+						quid       	"516CE9710132"
+						type       	"bool"))
+					result     	"string"
+					concurrency 	"Sequential"
+					opExportControl 	"Private"
+					uid        	0)
+				    (object Operation "setKey"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE9710134"
+					parameters 	(list Parameters
+					    (object Parameter "key1"
+						quid       	"516CE9710135"
+						type       	"const char*"))
+					result     	"void"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "getKey"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE9710137"
+					result     	"string"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "AES128Cipher"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE9710138"
+					documentation 	
+|//生成随机key
+|
+					
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "AES128Cipher"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE971013A"
+					parameters 	(list Parameters
+					    (object Parameter "key1"
+						quid       	"516CE971013B"
+						type       	"const char*"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "encrypt"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE971013C"
+					parameters 	(list Parameters
+					    (object Parameter "cont"
+						quid       	"516CE971013E"
+						type       	"const char*")
+					    (object Parameter "len"
+						quid       	"516CE971013F"
+						type       	"int"))
+					result     	"string"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "decrypt"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE9710141"
+					parameters 	(list Parameters
+					    (object Parameter "cont"
+						quid       	"516CE9710142"
+						type       	"const char*")
+					    (object Parameter "len"
+						quid       	"516CE9710144"
+						type       	"int"))
+					result     	"string"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "key"
+					quid       	"516CE97100CC"
+					type       	"char [16]"))
+				module     	"Component View::BlmLib"
+				quidu      	"5149A6410060"
+				language   	"ANSI C++")
+			    (object Class "Atomic"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Cplusplus"
+					name       	"HeaderSourceFile"
+					value      	"include\\blm\\blmbase.h"))
+				quid       	"516CE9710062"
+				documentation 	
+|//原子加减操作
+|
+				
+				superclasses 	(list inheritance_relationship_list
+				    (object Inheritance_Relationship
+					quid       	"516CE9710148"
+					supplier   	"Logical View::C++ Reverse Engineered::BlmComm::MemPool"
+					quidu      	"516CE9710087"
+					exportControl 	"Protected"))
+				operations 	(list Operations
+				    (object Operation "Atomic"
+					quid       	"516CE9710152"
+					parameters 	(list Parameters
+					    (object Parameter "initial"
+						quid       	"516CE9710153"
+						type       	"int"
+						initv      	"0")
+					    (object Parameter "pool1"
+						quid       	"516CE9710154"
+						type       	"MemPool*"
+						quidu      	"516CE9710087"
+						initv      	"NULL"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "~Atomic"
+					quid       	"516CE9710156"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "set"
+					quid       	"516CE9710157"
+					parameters 	(list Parameters
+					    (object Parameter "val"
+						quid       	"516CE9710158"
+						type       	"int"))
+					result     	"void"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "get"
+					quid       	"516CE9710159"
+					result     	"int"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "add"
+					quid       	"516CE971015A"
+					parameters 	(list Parameters
+					    (object Parameter "val"
+						quid       	"516CE971015B"
+						type       	"int"
+						initv      	"0"))
+					result     	"int"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "ato"
+					quid       	"516CE9710149"
+					type       	"pj_atomic_t*"))
+				module     	"Component View::BlmLib"
+				quidu      	"5149A6410060"
+				language   	"ANSI C++")
+			    (object Class "Autolock"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Cplusplus"
+					name       	"HeaderSourceFile"
+					value      	"include\\blm\\blmbase.h"))
+				quid       	"516CE9710069"
+				documentation 	
+|//自动锁
+|
+				
+				used_nodes 	(list uses_relationship_list
+				    (object Uses_Relationship
+					quid       	"516CEAB30028"
+					supplier   	"Logical View::C++ Reverse Engineered::BlmComm::Mutex"
+					quidu      	"516CE971008D"))
+				operations 	(list Operations
+				    (object Operation "Autolock"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE9710165"
+					parameters 	(list Parameters
+					    (object Parameter "mutex1"
+						quid       	"516CE9710166"
+						type       	"Mutex&"
+						quidu      	"516CE971008D"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "~Autolock"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE9710168"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				module     	"Component View::BlmLib"
+				quidu      	"5149A6410060"
+				language   	"ANSI C++")
+			    (object Class "Base64"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Cplusplus"
+					name       	"HeaderSourceFile"
+					value      	"include\\blm\\blmutil.h"))
+				quid       	"516CE971006F"
+				stereotype 	"struct"
+				operations 	(list Operations
+				    (object Operation "encode"
+					quid       	"516CE971016B"
+					stereotype 	"static"
+					parameters 	(list Parameters
+					    (object Parameter "data"
+						quid       	"516CE971016D"
+						type       	"const char*")
+					    (object Parameter "len"
+						quid       	"516CE971016E"
+						type       	"int"))
+					result     	"string"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "decode"
+					quid       	"516CE9710170"
+					stereotype 	"static"
+					parameters 	(list Parameters
+					    (object Parameter "data"
+						quid       	"516CE9710172"
+						type       	"const char*")
+					    (object Parameter "len"
+						quid       	"516CE9710173"
+						type       	"int"))
+					result     	"string"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				module     	"Component View::BlmLib"
+				quidu      	"5149A6410060"
+				language   	"ANSI C++")
+			    (object Class "Hash"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Cplusplus"
+					name       	"HeaderSourceFile"
+					value      	"include\\blm\\blmutil.h"))
+				quid       	"516CE9710079"
+				stereotype 	"struct"
+				operations 	(list Operations
+				    (object Operation "md5"
+					quid       	"516CE9710344"
+					stereotype 	"static"
+					parameters 	(list Parameters
+					    (object Parameter "data"
+						quid       	"516CE9710346"
+						type       	"const char*")
+					    (object Parameter "len"
+						quid       	"516CE9710347"
+						type       	"int"))
+					result     	"string"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "sha1"
+					quid       	"516CE9710348"
+					stereotype 	"static"
+					parameters 	(list Parameters
+					    (object Parameter "data"
+						quid       	"516CE971034A"
+						type       	"const char*")
+					    (object Parameter "len"
+						quid       	"516CE971034B"
+						type       	"int"))
+					result     	"string"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				module     	"Component View::BlmLib"
+				quidu      	"5149A6410060"
+				language   	"ANSI C++")
+			    (object Class "Json"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Cplusplus"
+					name       	"HeaderSourceFile"
+					value      	"include\\blm\\blmutil.h"))
+				quid       	"516CE9710080"
+				operations 	(list Operations
+				    (object Operation "Json"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE971036D"
+					parameters 	(list Parameters
+					    (object Parameter "j"
+						quid       	"516CE971036F"
+						type       	"cJSON*"))
+					concurrency 	"Sequential"
+					opExportControl 	"Private"
+					uid        	0)
+				    (object Operation "operator="
+					quid       	"516CE9710370"
+					parameters 	(list Parameters
+					    (object Parameter ""
+						quid       	"516CE9710372"
+						type       	"const Json&"
+						quidu      	"516CE9710080"))
+					result     	"Json&"
+					concurrency 	"Sequential"
+					opExportControl 	"Private"
+					uid        	0
+					quidu      	"516CE9710080")
+				    (object Operation "Json"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE9710373"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "~Json"
+					quid       	"516CE9710375"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "getName"
+					quid       	"516CE9710376"
+					documentation 	
+|//当前值获取
+|
+					
+					result     	"const char*"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "getInt"
+					quid       	"516CE9710377"
+					result     	"int"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "getString"
+					quid       	"516CE9710378"
+					result     	"const char*"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "getDouble"
+					quid       	"516CE9710379"
+					result     	"double"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "isFalse"
+					quid       	"516CE971037A"
+					documentation 	
+|//当前值的判断
+|
+					
+					result     	"bool"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "isTrue"
+					quid       	"516CE971037C"
+					result     	"bool"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "isNull"
+					quid       	"516CE971037D"
+					result     	"bool"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "isNumber"
+					quid       	"516CE971037E"
+					result     	"bool"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "isString"
+					quid       	"516CE971037F"
+					result     	"bool"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "isArray"
+					quid       	"516CE9710381"
+					result     	"bool"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "isObject"
+					quid       	"516CE9710382"
+					result     	"bool"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "isMember"
+					quid       	"516CE9710383"
+					documentation 	
+|//成员的获取
+|
+					
+					parameters 	(list Parameters
+					    (object Parameter "name"
+						quid       	"516CE9710384"
+						type       	"const char*"))
+					result     	"bool"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "get"
+					quid       	"516CE9710386"
+					parameters 	(list Parameters
+					    (object Parameter "name"
+						quid       	"516CE9710387"
+						type       	"const char*"))
+					result     	"Json"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0
+					quidu      	"516CE9710080")
+				    (object Operation "getInt"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE9710388"
+					parameters 	(list Parameters
+					    (object Parameter "name"
+						quid       	"516CE971038A"
+						type       	"const char*"))
+					result     	"int"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "getDouble"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE971038B"
+					parameters 	(list Parameters
+					    (object Parameter "name"
+						quid       	"516CE971038D"
+						type       	"const char*"))
+					result     	"double"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "getString"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE971038E"
+					parameters 	(list Parameters
+					    (object Parameter "name"
+						quid       	"516CE9710390"
+						type       	"const char*"))
+					result     	"const char*"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "getSize"
+					quid       	"516CE9710391"
+					documentation 	
+|//数组操作
+|
+					
+					result     	"int"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "get"
+					quid       	"516CE9710393"
+					parameters 	(list Parameters
+					    (object Parameter "index"
+						quid       	"516CE9720034"
+						type       	"int"))
+					result     	"Json"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0
+					quidu      	"516CE9710080")
+				    (object Operation "getInt"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE9720035"
+					parameters 	(list Parameters
+					    (object Parameter "i"
+						quid       	"516CE9720037"
+						type       	"int"))
+					result     	"int"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "getDouble"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE9720038"
+					parameters 	(list Parameters
+					    (object Parameter "i"
+						quid       	"516CE972003A"
+						type       	"int"))
+					result     	"double"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "getString"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE972003B"
+					parameters 	(list Parameters
+					    (object Parameter "i"
+						quid       	"516CE972003D"
+						type       	"int"))
+					result     	"const char*"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "getErr"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE972003E"
+					result     	"const char*"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "parse"
+					quid       	"516CE9720040"
+					parameters 	(list Parameters
+					    (object Parameter "str"
+						quid       	"516CE9720041"
+						type       	"const char*"))
+					result     	"bool"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "isowned"
+					quid       	"516CE9710350"
+					type       	"bool")
+				    (object ClassAttribute "json"
+					quid       	"516CE971035A"
+					type       	"cJSON*")
+				    (object ClassAttribute "err"
+					quid       	"516CE9710363"
+					type       	"string"))
+				module     	"Component View::BlmLib"
+				quidu      	"5149A6410060"
+				language   	"ANSI C++")
+			    (object Class "MemPool"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Cplusplus"
+					name       	"HeaderSourceFile"
+					value      	"include\\blm\\blmbase.h"))
+				quid       	"516CE9710087"
+				documentation 	
+|//内存池，pjlib的内存使用方式是：1.分配pool 2.从pool分配内存 3.释放pool（所有从pool分配的内存随之释放)
+|
+				
+				operations 	(list Operations
+				    (object Operation "MemPool"
+					quid       	"516CE972005C"
+					documentation 	
+|//参数p为NULL，则自行分配一个pool，如果p!=NULL，使用p
+|
+					
+					parameters 	(list Parameters
+					    (object Parameter "p"
+						quid       	"516CE9720060"
+						type       	"MemPool*"
+						quidu      	"516CE9710087"
+						initv      	"NULL"))
+					concurrency 	"Sequential"
+					opExportControl 	"Protected"
+					uid        	0)
+				    (object Operation "~MemPool"
+					quid       	"516CE9720063"
+					concurrency 	"Sequential"
+					opExportControl 	"Protected"
+					uid        	0))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "pool"
+					quid       	"516CE9720045"
+					type       	"pj_pool_t*"
+					exportControl 	"Protected")
+				    (object ClassAttribute "owned"
+					quid       	"516CE9720051"
+					type       	"bool"
+					exportControl 	"Protected"))
+				module     	"Component View::BlmLib"
+				quidu      	"5149A6410060"
+				language   	"ANSI C++")
+			    (object Class "Mutex"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Cplusplus"
+					name       	"HeaderSourceFile"
+					value      	"include\\blm\\blmbase.h"))
+				quid       	"516CE971008D"
+				documentation 	
+|//互斥对象
+|
+				
+				superclasses 	(list inheritance_relationship_list
+				    (object Inheritance_Relationship
+					quid       	"516CE9720068"
+					supplier   	"Logical View::C++ Reverse Engineered::BlmComm::MemPool"
+					quidu      	"516CE9710087"
+					exportControl 	"Protected"))
+				operations 	(list Operations
+				    (object Operation "Mutex"
+					quid       	"516CE9720072"
+					parameters 	(list Parameters
+					    (object Parameter "p"
+						quid       	"516CE9720073"
+						type       	"MemPool*"
+						quidu      	"516CE9710087"
+						initv      	"NULL"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "~Mutex"
+					quid       	"516CE9720075"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "lock"
+					quid       	"516CE9720076"
+					result     	"void"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "unlock"
+					quid       	"516CE9720077"
+					result     	"void"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "trylock"
+					quid       	"516CE9720078"
+					result     	"bool"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "mutex"
+					quid       	"516CE9720069"
+					type       	"pj_mutex_t*"))
+				module     	"Component View::BlmLib"
+				quidu      	"5149A6410060"
+				language   	"ANSI C++")
+			    (object Class "ParsedTime"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Cplusplus"
+					name       	"HeaderSourceFile"
+					value      	"include\\blm\\blmbase.h"))
+				quid       	"516CE9710093"
+				stereotype 	"struct"
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "wday"
+					quid       	"516CE972007B"
+					type       	"int"
+					exportControl 	"Public")
+				    (object ClassAttribute "day"
+					quid       	"516CE9720085"
+					type       	"int"
+					exportControl 	"Public")
+				    (object ClassAttribute "mon"
+					quid       	"516CE972008E"
+					type       	"int"
+					exportControl 	"Public")
+				    (object ClassAttribute "year"
+					quid       	"516CE9720097"
+					type       	"int"
+					exportControl 	"Public")
+				    (object ClassAttribute "sec"
+					quid       	"516CE97200A1"
+					type       	"int"
+					exportControl 	"Public")
+				    (object ClassAttribute "min"
+					quid       	"516CE97200AA"
+					type       	"int"
+					exportControl 	"Public")
+				    (object ClassAttribute "hour"
+					quid       	"516CE97200B3"
+					type       	"int"
+					exportControl 	"Public")
+				    (object ClassAttribute "msec"
+					quid       	"516CE97200BC"
+					type       	"int"
+					exportControl 	"Public"))
+				module     	"Component View::BlmLib"
+				quidu      	"5149A6410060"
+				language   	"ANSI C++")
+			    (object Parameterized_Class "ProConPool"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Cplusplus"
+					name       	"HeaderSourceFile"
+					value      	"include\\blm\\blmbase.h"))
+				quid       	"516CE971009B"
+				documentation 	
+|//生产者消费者缓冲区，若每次添加/删除一个对象的开销太大，则可以使用addAll/removeAll
+|
+				
+				superclasses 	(list inheritance_relationship_list
+				    (object Inheritance_Relationship
+					quid       	"516CE97200C9"
+					supplier   	"Logical View::C++ Reverse Engineered::BlmComm::Mutex"
+					quidu      	"516CE971008D"))
+				operations 	(list Operations
+				    (object Operation "ProConPool"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE97200E1"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "add"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE97200E2"
+					parameters 	(list Parameters
+					    (object Parameter "product"
+						quid       	"516CE97200E3"
+						type       	"T"
+						quidu      	"516CE97100A0"))
+					result     	"void"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "remove"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE97200E5"
+					result     	"T"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0
+					quidu      	"516CE97100A0")
+				    (object Operation "addAll"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE97200E6"
+					parameters 	(list Parameters
+					    (object Parameter "initems"
+						quid       	"516CE97200E8"
+						type       	"std::list<T>&"))
+					result     	"void"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "removeAll"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE97200EA"
+					parameters 	(list Parameters
+					    (object Parameter "resitems"
+						quid       	"516CE97200EB"
+						type       	"std::list<T>&"))
+					result     	"void"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "tryRemove"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE97200ED"
+					parameters 	(list Parameters
+					    (object Parameter "val"
+						quid       	"516CE97200EE"
+						type       	"T&"
+						quidu      	"516CE97100A0"))
+					result     	"bool"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "tryRemoveAll"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE97200F0"
+					parameters 	(list Parameters
+					    (object Parameter "resitems"
+						quid       	"516CE97200F2"
+						type       	"std::list<T>&"))
+					result     	"bool"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "size"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE97200F3"
+					result     	"int"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "sz"
+					quid       	"516CE97200CA"
+					type       	"int")
+				    (object ClassAttribute "data"
+					quid       	"516CE97200D3"
+					type       	"std::list<T>"))
+				module     	"Component View::BlmLib"
+				quidu      	"5149A6410060"
+				language   	"ANSI C++"
+				parameters 	(list Parameters
+				    (object Parameter "T"
+					quid       	"516CE97100A4"
+					type       	"class"))
+				nestedClasses 	(list nestedClasses
+				    (object Class "T"
+					quid       	"516CE97100A0"
+					stereotype 	"template_param"
+					module     	"Component View::BlmLib"
+					quidu      	"5149A6410060")))
+			    (object Class "RC4"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Cplusplus"
+					name       	"HeaderSourceFile"
+					value      	"include\\blm\\blmutil.h"))
+				quid       	"516CE97100A6"
+				operations 	(list Operations
+				    (object Operation "RC4"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE9720100"
+					documentation 	
+|//生成随机key
+|
+					
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "RC4"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE9720102"
+					parameters 	(list Parameters
+					    (object Parameter "key1"
+						quid       	"516CE9720103"
+						type       	"const char*"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "setKey"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE9720104"
+					parameters 	(list Parameters
+					    (object Parameter "key1"
+						quid       	"516CE9720106"
+						type       	"const char*"))
+					result     	"void"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "rc4"
+					quid       	"516CE9720107"
+					parameters 	(list Parameters
+					    (object Parameter "data"
+						quid       	"516CE9720108"
+						type       	"const char*")
+					    (object Parameter "len"
+						quid       	"516CE972010A"
+						type       	"int"))
+					result     	"string"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "rc4buf"
+					quid       	"516CE972010B"
+					parameters 	(list Parameters
+					    (object Parameter "data"
+						quid       	"516CE972010C"
+						type       	"void*")
+					    (object Parameter "len"
+						quid       	"516CE972010E"
+						type       	"int"))
+					result     	"void"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "key"
+					quid       	"516CE97200F7"
+					type       	"char [32]"))
+				module     	"Component View::BlmLib"
+				quidu      	"5149A6410060"
+				language   	"ANSI C++")
+			    (object Class "Semaphore"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Cplusplus"
+					name       	"HeaderSourceFile"
+					value      	"include\\blm\\blmbase.h"))
+				quid       	"516CE97100AD"
+				documentation 	
+|//信号量
+|
+				
+				superclasses 	(list inheritance_relationship_list
+				    (object Inheritance_Relationship
+					quid       	"516CE9720112"
+					supplier   	"Logical View::C++ Reverse Engineered::BlmComm::MemPool"
+					quidu      	"516CE9710087"
+					exportControl 	"Protected"))
+				operations 	(list Operations
+				    (object Operation "Semaphore"
+					quid       	"516CE972011C"
+					parameters 	(list Parameters
+					    (object Parameter "initial"
+						quid       	"516CE972011D"
+						type       	"int")
+					    (object Parameter "max"
+						quid       	"516CE972011E"
+						type       	"int"
+						initv      	"1024*1024")
+					    (object Parameter "pool1"
+						quid       	"516CE9720120"
+						type       	"MemPool*"
+						quidu      	"516CE9710087"
+						initv      	"NULL"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "~Semaphore"
+					quid       	"516CE9720122"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "wait"
+					quid       	"516CE9720123"
+					result     	"void"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "trywait"
+					quid       	"516CE9720124"
+					result     	"bool"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "post"
+					quid       	"516CE9720125"
+					result     	"void"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "sem"
+					quid       	"516CE9720113"
+					type       	"pj_sem_t*"))
+				module     	"Component View::BlmLib"
+				quidu      	"5149A6410060"
+				language   	"ANSI C++")
+			    (object Class "Thread"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Cplusplus"
+					name       	"HeaderSourceFile"
+					value      	"include\\blm\\blmbase.h"))
+				quid       	"516CE97100B5"
+				documentation 	
+|//线程类
+|
+				
+				superclasses 	(list inheritance_relationship_list
+				    (object Inheritance_Relationship
+					quid       	"516CE972012A"
+					supplier   	"Logical View::C++ Reverse Engineered::BlmComm::MemPool"
+					quidu      	"516CE9710087"))
+				operations 	(list Operations
+				    (object Operation "threadproc"
+					quid       	"516CE972013E"
+					stereotype 	"static"
+					parameters 	(list Parameters
+					    (object Parameter "p"
+						quid       	"516CE9720141"
+						type       	"void*"))
+					result     	"int"
+					concurrency 	"Sequential"
+					opExportControl 	"Private"
+					uid        	0)
+				    (object Operation "Thread"
+					quid       	"516CE9720142"
+					parameters 	(list Parameters
+					    (object Parameter "callback"
+						quid       	"516CE9720143"
+						type       	"SimpleCallback*")
+					    (object Parameter "name1"
+						quid       	"516CE9720145"
+						type       	"const char*"))
+					concurrency 	"Sequential"
+					opExportControl 	"Private"
+					uid        	0)
+				    (object Operation "~Thread"
+					quid       	"516CE9720146"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "join"
+					quid       	"516CE9720147"
+					documentation 	
+|//等待线程结束
+|
+					
+					result     	"void"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "sleep"
+					quid       	"516CE9720148"
+					stereotype 	"static"
+					parameters 	(list Parameters
+					    (object Parameter "msec"
+						quid       	"516CE972014A"
+						type       	"unsigned"))
+					result     	"void"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "sc"
+					quid       	"516CE972012B"
+					type       	"SimpleCallback*")
+				    (object ClassAttribute "pthread"
+					quid       	"516CE9720135"
+					type       	"pj_thread_t*"))
+				module     	"Component View::BlmLib"
+				quidu      	"5149A6410060"
+				language   	"ANSI C++")
+			    (object Class "Time"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Cplusplus"
+					name       	"HeaderSourceFile"
+					value      	"include\\blm\\blmbase.h"))
+				quid       	"516CE97100BC"
+				documentation 	
+|//时间处理
+|
+				
+				operations 	(list Operations
+				    (object Operation "Time"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE9720161"
+					parameters 	(list Parameters
+					    (object Parameter "sec1"
+						quid       	"516CE9720162"
+						type       	"int")
+					    (object Parameter "msec1"
+						quid       	"516CE9720163"
+						type       	"int"))
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "Time"
+					attributes 	(list Attribute_Set
+					    (object Attribute
+						tool       	"Cplusplus"
+						name       	"Inline"
+						value      	TRUE))
+					quid       	"516CE9720164"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "getTimeofday"
+					quid       	"516CE9720166"
+					documentation 	
+|//pj_time_val只有两个成员：{ int sec, msec; }参见pjlib中types.h
+|
+					
+					stereotype 	"static"
+					result     	"Time"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0
+					quidu      	"516CE97100BC")
+				    (object Operation "value2Parsed"
+					quid       	"516CE9720168"
+					documentation 	
+|//pj_parsed_time有多个成员用于表示年月日时分秒，参见pjlib的types.h
+|
+					
+					stereotype 	"static"
+					parameters 	(list Parameters
+					    (object Parameter "tv"
+						quid       	"516CE972016A"
+						type       	"Time*"
+						quidu      	"516CE97100BC"))
+					result     	"ParsedTime"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0
+					quidu      	"516CE9710093")
+				    (object Operation "parsed2Value"
+					quid       	"516CE972016B"
+					stereotype 	"static"
+					parameters 	(list Parameters
+					    (object Parameter "pt"
+						quid       	"516CE972016D"
+						type       	"ParsedTime*"
+						quidu      	"516CE9710093"))
+					result     	"Time"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0
+					quidu      	"516CE97100BC")
+				    (object Operation "localToGmt"
+					quid       	"516CE972016E"
+					stereotype 	"static"
+					parameters 	(list Parameters
+					    (object Parameter "tv"
+						quid       	"516CE9720170"
+						type       	"Time*"
+						quidu      	"516CE97100BC"))
+					result     	"Time"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0
+					quidu      	"516CE97100BC")
+				    (object Operation "gmtToLocal"
+					quid       	"516CE9720171"
+					stereotype 	"static"
+					parameters 	(list Parameters
+					    (object Parameter "tv"
+						quid       	"516CE9720173"
+						type       	"Time*"
+						quidu      	"516CE97100BC"))
+					result     	"Time"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0
+					quidu      	"516CE97100BC")
+				    (object Operation "getTickcount"
+					quid       	"516CE9720174"
+					stereotype 	"static"
+					result     	"Time"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0
+					quidu      	"516CE97100BC")
+				    (object Operation "getTickDiff"
+					quid       	"516CE9720176"
+					stereotype 	"static"
+					parameters 	(list Parameters
+					    (object Parameter "tv1"
+						quid       	"516CE9720178"
+						type       	"Time*"
+						quidu      	"516CE97100BC")
+					    (object Parameter "tv2"
+						quid       	"516CE9720179"
+						type       	"Time*"
+						quidu      	"516CE97100BC"))
+					result     	"int"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "addTick"
+					quid       	"516CE972017A"
+					stereotype 	"static"
+					parameters 	(list Parameters
+					    (object Parameter "tv"
+						quid       	"516CE972017C"
+						type       	"Time*"
+						quidu      	"516CE97100BC")
+					    (object Parameter "millisec"
+						quid       	"516CE972017D"
+						type       	"int"))
+					result     	"void"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				class_attributes 	(list class_attribute_list
+				    (object ClassAttribute "sec"
+					quid       	"516CE972014E"
+					type       	"int"
+					exportControl 	"Public")
+				    (object ClassAttribute "msec"
+					quid       	"516CE9720157"
+					type       	"int"
+					exportControl 	"Public"))
+				module     	"Component View::BlmLib"
+				quidu      	"5149A6410060"
+				language   	"ANSI C++")
+			    (object Class "Zlib"
+				attributes 	(list Attribute_Set
+				    (object Attribute
+					tool       	"Cplusplus"
+					name       	"HeaderSourceFile"
+					value      	"include\\blm\\blmutil.h"))
+				quid       	"516CE97100C3"
+				stereotype 	"struct"
+				operations 	(list Operations
+				    (object Operation "uncompress"
+					quid       	"516CE9720181"
+					stereotype 	"static"
+					parameters 	(list Parameters
+					    (object Parameter "data"
+						quid       	"516CE9720183"
+						type       	"const char*")
+					    (object Parameter "len"
+						quid       	"516CE9720184"
+						type       	"int"))
+					result     	"string"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "compress"
+					quid       	"516CE9720186"
+					stereotype 	"static"
+					parameters 	(list Parameters
+					    (object Parameter "data"
+						quid       	"516CE9720188"
+						type       	"const char*")
+					    (object Parameter "len"
+						quid       	"516CE9720189"
+						type       	"int"))
+					result     	"string"
+					concurrency 	"Sequential"
+					opExportControl 	"Public"
+					uid        	0))
+				module     	"Component View::BlmLib"
+				quidu      	"5149A6410060"
+				language   	"ANSI C++")
+			    (object Association "$UNNAMED$0"
+				quid       	"5167A1B102E9"
+				roles      	(list role_list
+				    (object Role "poller"
+					quid       	"5167A1B102EA"
+					label      	"poller"
+					supplier   	"Logical View::C++ Reverse Engineered::BlmComm::BlmIoqueue"
+					quidu      	"5167A1B1025D"
+					exportControl 	"Private"
+					is_navigable 	TRUE)
+				    (object Role "$UNNAMED$1"
+					quid       	"5167A1B102EC"
+					supplier   	"Logical View::C++ Reverse Engineered::BlmComm::BlmClient"
+					quidu      	"5167A1B1023F")))
+			    (object Association "$UNNAMED$2"
+				quid       	"5167A1B10308"
+				roles      	(list role_list
+				    (object Role "msgMap"
+					quid       	"5167A1B10309"
+					label      	"msgMap"
+					supplier   	"Logical View::C++ Reverse Engineered::BlmComm::BlmClient::MsgMap"
+					quidu      	"5167A1B1024C"
+					Containment 	"By Value"
+					exportControl 	"Private"
+					is_navigable 	TRUE)
+				    (object Role "$UNNAMED$3"
+					quid       	"5167A1B1030B"
+					supplier   	"Logical View::C++ Reverse Engineered::BlmComm::BlmClient"
+					quidu      	"5167A1B1023F"
+					is_aggregate 	TRUE)))
+			    (object Association "$UNNAMED$4"
+				quid       	"516CE971015F"
+				roles      	(list role_list
+				    (object Role "mutex: Mutex&"
+					quid       	"516CE9710160"
+					label      	"mutex: Mutex&"
+					supplier   	"Logical View::C++ Reverse Engineered::BlmComm::Mutex"
+					quidu      	"516CE971008D"
+					Containment 	"By Value"
+					exportControl 	"Private"
+					is_navigable 	TRUE)
+				    (object Role "$UNNAMED$5"
+					quid       	"516CE9710162"
+					supplier   	"Logical View::C++ Reverse Engineered::BlmComm::Autolock"
+					quidu      	"516CE9710069"
+					is_aggregate 	TRUE)))
+			    (object Association "$UNNAMED$6"
+				quid       	"516CE97200DC"
+				roles      	(list role_list
+				    (object Role "available"
+					quid       	"516CE97200DD"
+					label      	"available"
+					supplier   	"Logical View::C++ Reverse Engineered::BlmComm::Semaphore"
+					quidu      	"516CE97100AD"
+					Containment 	"By Value"
+					exportControl 	"Private"
+					is_navigable 	TRUE)
+				    (object Role "$UNNAMED$7"
+					quid       	"516CE97200DF"
+					supplier   	"Logical View::C++ Reverse Engineered::BlmComm::ProConPool"
+					quidu      	"516CE971009B"
+					is_aggregate 	TRUE))))
+			logical_presentations 	(list unit_reference_list)))
+		logical_presentations 	(list unit_reference_list)))
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "BlmComm"
+		quid       	"5149A23B02A9"
+		title      	"BlmComm"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	100
+		items      	(list diagram_item_list
+		    (object ClassView "Class" "Logical View::C++ Reverse Engineered::BlmComm::BlmClient" @1
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(598, 656)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@1
+			    location   	(217, 224)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	762
+			    justify    	0
+			    label      	"BlmClient")
+			stereotype 	(object ItemLabel
+			    Parent_View 	@1
+			    location   	(217, 174)
+			    fill_color 	13434879
+			    anchor     	10
+			    nlines     	1
+			    max_width  	762
+			    justify    	0
+			    label      	"<<Interface>>")
+			icon       	"Interface"
+			icon_style 	"Label"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5167A1B1023F"
+			compartment 	(object Compartment
+			    Parent_View 	@1
+			    location   	(217, 329)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	16
+			    max_width  	759
+			    justify    	1)
+			width      	780
+			height     	988
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::C++ Reverse Engineered::BlmComm::BlmIoqueue" @2
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(2060, 653)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@2
+			    location   	(1715, 346)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	690
+			    justify    	0
+			    label      	"BlmIoqueue")
+			stereotype 	(object ItemLabel
+			    Parent_View 	@2
+			    location   	(1715, 296)
+			    fill_color 	13434879
+			    anchor     	10
+			    nlines     	1
+			    max_width  	690
+			    justify    	0
+			    label      	"<<Interface>>")
+			icon       	"Interface"
+			icon_style 	"Label"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5167A1B1025D"
+			compartment 	(object Compartment
+			    Parent_View 	@2
+			    location   	(1715, 451)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	11
+			    max_width  	700
+			    justify    	1)
+			width      	708
+			height     	738
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::C++ Reverse Engineered::BlmComm::SingleComm" @3
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1453, 1506)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@3
+			    location   	(1300, 1399)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	306
+			    justify    	0
+			    label      	"SingleComm")
+			stereotype 	(object ItemLabel
+			    Parent_View 	@3
+			    location   	(1300, 1349)
+			    fill_color 	13434879
+			    anchor     	10
+			    nlines     	1
+			    max_width  	306
+			    justify    	0
+			    label      	"<<struct>>")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5167A1B1025E"
+			compartment 	(object Compartment
+			    Parent_View 	@3
+			    location   	(1300, 1504)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	3
+			    max_width  	303
+			    justify    	1)
+			width      	324
+			height     	338
+			annotation 	8
+			autoResize 	TRUE)
+		    (object RealizeView "" @4
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5167A24202A6"
+			client     	@3
+			supplier   	@2
+			vertices   	(list Points
+			    (1571, 1336)
+			    (1795, 1022))
+			line_style 	0)
+		    (object RealizeView "" @5
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5167A245011B"
+			client     	@3
+			supplier   	@1
+			vertices   	(list Points
+			    (1290, 1344)
+			    (988, 1044))
+			line_style 	0)))
+	    (object ClassDiagram "BlmUtil"
+		quid       	"516CE9B30122"
+		title      	"BlmUtil"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object ClassView "Class" "Logical View::C++ Reverse Engineered::BlmComm::AES128Cipher" @6
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1521, 363)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@6
+			    location   	(1349, 84)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	344
+			    justify    	0
+			    label      	"AES128Cipher")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"516CE971005B"
+			compartment 	(object Compartment
+			    Parent_View 	@6
+			    location   	(1349, 189)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	9
+			    max_width  	341
+			    justify    	1)
+			width      	362
+			height     	582
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::C++ Reverse Engineered::BlmComm::Base64" @7
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(2017, 928)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@7
+			    location   	(1805, 821)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	424
+			    justify    	0
+			    label      	"Base64")
+			stereotype 	(object ItemLabel
+			    Parent_View 	@7
+			    location   	(1805, 771)
+			    fill_color 	13434879
+			    anchor     	10
+			    nlines     	1
+			    max_width  	424
+			    justify    	0
+			    label      	"<<struct>>")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"516CE971006F"
+			compartment 	(object Compartment
+			    Parent_View 	@7
+			    location   	(1805, 926)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	3
+			    max_width  	422
+			    justify    	1)
+			width      	442
+			height     	338
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::C++ Reverse Engineered::BlmComm::Hash" @8
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(2546, 782)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@8
+			    location   	(2356, 675)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	380
+			    justify    	0
+			    label      	"Hash")
+			stereotype 	(object ItemLabel
+			    Parent_View 	@8
+			    location   	(2356, 625)
+			    fill_color 	13434879
+			    anchor     	10
+			    nlines     	1
+			    max_width  	380
+			    justify    	0
+			    label      	"<<struct>>")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"516CE9710079"
+			compartment 	(object Compartment
+			    Parent_View 	@8
+			    location   	(2356, 780)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	3
+			    max_width  	378
+			    justify    	1)
+			width      	398
+			height     	338
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::C++ Reverse Engineered::BlmComm::Json" @9
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(361, 968)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@9
+			    location   	(203, 139)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	316
+			    justify    	0
+			    label      	"Json")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"516CE9710080"
+			compartment 	(object Compartment
+			    Parent_View 	@9
+			    location   	(203, 244)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	31
+			    max_width  	313
+			    justify    	1)
+			width      	334
+			height     	1682
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::C++ Reverse Engineered::BlmComm::RC4" @10
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1025, 491)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@10
+			    location   	(869, 262)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	312
+			    justify    	0
+			    label      	"RC4")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"516CE97100A6"
+			compartment 	(object Compartment
+			    Parent_View 	@10
+			    location   	(869, 367)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	7
+			    max_width  	309
+			    justify    	1)
+			width      	330
+			height     	482
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::C++ Reverse Engineered::BlmComm::Zlib" @11
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1052, 1228)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@11
+			    location   	(798, 1121)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	508
+			    justify    	0
+			    label      	"Zlib")
+			stereotype 	(object ItemLabel
+			    Parent_View 	@11
+			    location   	(798, 1071)
+			    fill_color 	13434879
+			    anchor     	10
+			    nlines     	1
+			    max_width  	508
+			    justify    	0
+			    label      	"<<struct>>")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"516CE97100C3"
+			compartment 	(object Compartment
+			    Parent_View 	@11
+			    location   	(798, 1226)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	3
+			    max_width  	506
+			    justify    	1)
+			width      	526
+			height     	338
+			annotation 	8
+			autoResize 	TRUE)))
+	    (object ClassDiagram "BlmBase"
+		quid       	"516CEA2D0217"
+		title      	"BlmBase"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	213
+		items      	(list diagram_item_list
+		    (object ClassView "Class" "Logical View::C++ Reverse Engineered::BlmComm::Atomic" @12
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(462, 519)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@12
+			    location   	(275, 290)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	374
+			    justify    	0
+			    label      	"Atomic")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"516CE9710062"
+			compartment 	(object Compartment
+			    Parent_View 	@12
+			    location   	(275, 395)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	7
+			    max_width  	372
+			    justify    	1)
+			width      	392
+			height     	482
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::C++ Reverse Engineered::BlmComm::Autolock" @13
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(419, 1735)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@13
+			    location   	(286, 1606)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	266
+			    justify    	0
+			    label      	"Autolock")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"516CE9710069"
+			compartment 	(object Compartment
+			    Parent_View 	@13
+			    location   	(286, 1711)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	3
+			    max_width  	268
+			    justify    	1)
+			width      	284
+			height     	282
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::C++ Reverse Engineered::BlmComm::Time" @14
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(2371, 725)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@14
+			    location   	(2103, 346)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	536
+			    justify    	0
+			    label      	"Time")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"516CE97100BC"
+			compartment 	(object Compartment
+			    Parent_View 	@14
+			    location   	(2103, 451)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	13
+			    max_width  	535
+			    justify    	1)
+			width      	554
+			height     	782
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::C++ Reverse Engineered::BlmComm::Mutex" @15
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(429, 1100)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@15
+			    location   	(218, 871)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	422
+			    justify    	0
+			    label      	"Mutex")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"516CE971008D"
+			compartment 	(object Compartment
+			    Parent_View 	@15
+			    location   	(218, 976)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	7
+			    max_width  	419
+			    justify    	1)
+			width      	440
+			height     	482
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::C++ Reverse Engineered::BlmComm::Semaphore" @16
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1296, 694)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@16
+			    location   	(1120, 465)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	352
+			    justify    	0
+			    label      	"Semaphore")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"516CE97100AD"
+			compartment 	(object Compartment
+			    Parent_View 	@16
+			    location   	(1120, 570)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	7
+			    max_width  	350
+			    justify    	1)
+			width      	370
+			height     	482
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "ParameterizedClass" "Logical View::C++ Reverse Engineered::BlmComm::ProConPool" @17
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1244, 1589)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@17
+			    location   	(1055, 1281)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	378
+			    justify    	0
+			    label      	"ProConPool")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"516CE971009B"
+			compartment 	(object Compartment
+			    Parent_View 	@17
+			    location   	(1055, 1386)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	11
+			    max_width  	375
+			    justify    	1)
+			width      	396
+			height     	716
+			annotation 	8
+			autoResize 	TRUE)
+		    (object UsesView "" @18
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"516CEAB30028"
+			client     	@13
+			supplier   	@15
+			vertices   	(list Points
+			    (420, 1593)
+			    (424, 1341))
+			line_style 	0)
+		    (object ClassView "Class" "Logical View::C++ Reverse Engineered::BlmComm::Thread" @19
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(2137, 1532)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@19
+			    location   	(1898, 1278)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	478
+			    justify    	0
+			    label      	"Thread")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"516CE97100B5"
+			compartment 	(object Compartment
+			    Parent_View 	@19
+			    location   	(1898, 1383)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	8
+			    max_width  	475
+			    justify    	1)
+			width      	496
+			height     	532
+			annotation 	8
+			autoResize 	TRUE)))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"5149A23A0118"
+	physical_models 	(list unit_reference_list
+	    (object module "BlmLib" "NotAModuleType" "NotAModulePart"
+		attributes 	(list Attribute_Set
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"FilesEncoding"
+			value      	(value Text 
+|v1:Vinclude\blm\blmbase.h,51694031,A
+|Vinclude\blm\blmcomm.h,516b4b28,A
+|Vinclude\blm\blmutil.h,51662969,A
+|
+			))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"RevEngRootDirectory"
+			value      	"D:\\Blm-Client2\\BLM-Lib")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CodeItemsEncoding"
+			value      	
+|v3:BlmComm::AES128Cipher,t,D,,A,1e3,3ef
+|BlmComm::Atomic,t,B,,A,60a,78d
+|BlmComm::Autolock,t,B,,A,83c,8d0
+|BlmComm::Base64,t,D,,A,f2,16b
+|BlmComm::BlmClient,t,C,,A,9b,8f5
+|BlmComm::BlmClient::addConnectCallback,f,C,,aC*,int(C::*)(void*),void*,,100c,10da
+|BlmComm::BlmClient::addMsgCallback,f,C,,0Eint,C*,int(C::*)(int,int,const string&,int,void*),void*,,10dc,11c3
+|BlmComm::BlmIoqueue,t,C,,A,8f9,d2e
+|BlmComm::BlmIoqueue::addTimerCallback,f,C,,eint,T*,int(T::*)(void*),void*,,e3a,f2e
+|BlmComm::BlmIoqueue::wget,f,C,,0Econst char*,T*,int(T::*)(const string&,void*),int,void*,,f31,1008
+|BlmComm::Hash,t,D,,A,16e,1e0
+|BlmComm::Json,t,D,,A,512,92c
+|BlmComm::MemPool,t,B,,A,3e9,607
+|BlmComm::Mutex,t,B,,A,790,838
+|BlmComm::ParsedTime,t,B,,A,ef2,f3b
+|BlmComm::ProConPool,t,B,,A,9a7,eef
+|BlmComm::RC4,t,D,,A,3f3,50f
+|BlmComm::Semaphore,t,B,,A,8d3,9a4
+|BlmComm::SingleComm,t,C,,A,d31,e34
+|BlmComm::Thread,t,B,,A,1192,13a9
+|BlmComm::Time,t,B,,A,f3d,118f
+|BlmComm::Zlib,t,D,,A,72,ef
+|
+			))
+		quid       	"5149A6410060"
+		stereotype 	""
+		realized_interfaces 	(list realize_rel_list
+		    (object Realize_Relationship
+			quid       	"5167A1CA000F"
+			supplier   	"Logical View::C++ Reverse Engineered::BlmComm::BlmClient"
+			quidu      	"5167A1B1023F")
+		    (object Realize_Relationship
+			quid       	"5167A1D802E2"
+			supplier   	"Logical View::C++ Reverse Engineered::BlmComm::BlmIoqueue"
+			quidu      	"5167A1B1025D"))
+		language   	"ANSI C++"
+		class      	"Logical View::C++ Reverse Engineered::BlmComm::BlmClient"
+		quidu      	"5167A1B1023F"
+		class      	"Logical View::C++ Reverse Engineered::BlmComm::BlmClient::MsgMap"
+		quidu      	"5167A1B1024C"
+		class      	"Logical View::C++ Reverse Engineered::BlmComm::BlmIoqueue"
+		quidu      	"5167A1B1025D"
+		class      	"Logical View::C++ Reverse Engineered::BlmComm::SingleComm"
+		quidu      	"5167A1B1025E"
+		class      	"Logical View::C++ Reverse Engineered::BlmComm::AES128Cipher"
+		quidu      	"516CE971005B"
+		class      	"Logical View::C++ Reverse Engineered::BlmComm::Atomic"
+		quidu      	"516CE9710062"
+		class      	"Logical View::C++ Reverse Engineered::BlmComm::Autolock"
+		quidu      	"516CE9710069"
+		class      	"Logical View::C++ Reverse Engineered::BlmComm::Base64"
+		quidu      	"516CE971006F"
+		class      	"Logical View::C++ Reverse Engineered::BlmComm::Hash"
+		quidu      	"516CE9710079"
+		class      	"Logical View::C++ Reverse Engineered::BlmComm::Json"
+		quidu      	"516CE9710080"
+		class      	"Logical View::C++ Reverse Engineered::BlmComm::MemPool"
+		quidu      	"516CE9710087"
+		class      	"Logical View::C++ Reverse Engineered::BlmComm::Mutex"
+		quidu      	"516CE971008D"
+		class      	"Logical View::C++ Reverse Engineered::BlmComm::ParsedTime"
+		quidu      	"516CE9710093"
+		class      	"Logical View::C++ Reverse Engineered::BlmComm::ProConPool"
+		quidu      	"516CE971009B"
+		class      	"Logical View::C++ Reverse Engineered::BlmComm::ProConPool::T"
+		quidu      	"516CE97100A0"
+		class      	"Logical View::C++ Reverse Engineered::BlmComm::RC4"
+		quidu      	"516CE97100A6"
+		class      	"Logical View::C++ Reverse Engineered::BlmComm::Semaphore"
+		quidu      	"516CE97100AD"
+		class      	"Logical View::C++ Reverse Engineered::BlmComm::Thread"
+		quidu      	"516CE97100B5"
+		class      	"Logical View::C++ Reverse Engineered::BlmComm::Time"
+		quidu      	"516CE97100BC"
+		class      	"Logical View::C++ Reverse Engineered::BlmComm::Zlib"
+		quidu      	"516CE97100C3"))
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"5149A23B0299"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object ModView "Component View::BlmLib" "NotAModuleType" "NotAModulePart" @20
+			location   	(709, 715)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@20
+			    location   	(674, 690)
+			    fill_color 	13434879
+			    anchor_loc 	3
+			    nlines     	2
+			    max_width  	128
+			    justify    	1
+			    label      	"BlmLib")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5149A6410060"
+			width      	230
+			autoResize 	TRUE
+			width      	230
+			height     	162)
+		    (object InterfaceView "Logical View::C++ Reverse Engineered::BlmComm::BlmClient" @21
+			location   	(1020, 1203)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@21
+			    location   	(1019, 1311)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	228
+			    justify    	0
+			    label      	"BlmClient")
+			icon       	"Interface"
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5167A1B1023F"
+			width      	58
+			height     	58
+			autoResize 	TRUE)
+		    (object RealizeView "" @22
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5167A1CA000F"
+			client     	@20
+			supplier   	@21
+			vertices   	(list Points
+			    (758, 793)
+			    (1000, 1175))
+			line_style 	0)
+		    (object InterfaceView "Logical View::C++ Reverse Engineered::BlmComm::BlmIoqueue" @23
+			location   	(1022, 303)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@23
+			    location   	(1021, 411)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	234
+			    justify    	0
+			    label      	"BlmIoqueue")
+			icon       	"Interface"
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5167A1B1025D"
+			width      	58
+			height     	58
+			autoResize 	TRUE)
+		    (object RealizeView "" @24
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5167A1D802E2"
+			client     	@20
+			supplier   	@23
+			vertices   	(list Points
+			    (767, 635)
+			    (921, 436))
+			line_style 	0))))
+	category   	"Logical View"
+	quidu      	"5149A23A0116")
+    process_structure 	(object Processes
+	quid       	"5149A23A0119"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"5149A23A011B"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	attributes 	(list Attribute_Set
+	    (object Attribute
+		tool       	"Cplusplus"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"Cplusplus"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"Synchronize"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CodeName"
+			value      	"")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"InitialValue"
+			value      	"")))
+	    (object Attribute
+		tool       	"Cplusplus"
+		name       	"default__Inherit"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"Synchronize"
+			value      	TRUE)))
+	    (object Attribute
+		tool       	"Cplusplus"
+		name       	"default__Module-Spec"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"Synchronize"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"RevEngRootDirectory"
+			value      	"")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"RootPackage"
+			value      	"C++ Reverse Engineered")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"RevEngDirectoriesAsPackages"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"HeaderFileExtension"
+			value      	".h")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"ImplementationFileExtension"
+			value      	".cpp")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"NewHeaderFileDirectory"
+			value      	"")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"NewImplementationFileDirectory"
+			value      	"")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"FileCapitalization"
+			value      	("FileCapitalizationSet" 0))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CodeGenExtraDirectories"
+			value      	("CodeGenExtraDirectoriesSet" 0))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"StripClassPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"UseTabs"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"TabWidth"
+			value      	8)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"IndentWidth"
+			value      	4)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"AccessIndentation"
+			value      	-2)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CreateBackupFiles"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"ModelIdCommentRules"
+			value      	("ModelIdCommentRulesSet" 1))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CommentRules"
+			value      	("CommentRulesSet" 1))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"PageWidth"
+			value      	80)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"ClassMemberOrder"
+			value      	("MemberOrderSet" 1))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"OneParameterPerLine"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"NamespaceBraceStyle"
+			value      	("BraceStyleSet" 1))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"ClassBraceStyle"
+			value      	("BraceStyleSet" 2))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"FunctionBraceStyle"
+			value      	("BraceStyleSet" 2))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CommentStyleProperty"
+			value      	("CommentStyleSet" 1))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"Copyright"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"InitialHeaderIncludes"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"InitialBodyIncludes"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CodeGenExtraDirectoriesSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"None"
+				value      	0)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Namespaces"
+				value      	1)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Packages"
+				value      	2)))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"FileCapitalizationSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Same as model"
+				value      	0)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Lower case"
+				value      	1)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Upper case"
+				value      	2)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Lower case with underscores"
+				value      	3)))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CommentStyleSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"C++ Comment"
+				value      	1)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"C Comment"
+				value      	2)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"XML Comment"
+				value      	3)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"JavaDoc Comment"
+				value      	4)))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"BraceStyleSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"B1"
+				value      	1)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"B2"
+				value      	2)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"B3"
+				value      	3)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"B4"
+				value      	4)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"B5"
+				value      	5)))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"MemberOrderSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Public First"
+				value      	1)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Private First"
+				value      	2)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Order by kind"
+				value      	3)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Unordered"
+				value      	4)))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"ModelIdCommentRulesSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Code generation only"
+				value      	1)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Code generation and reverse engineering"
+				value      	2)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Never generate model IDs"
+				value      	3)))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CommentRulesSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Always synchronize"
+				value      	1)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Code generation only"
+				value      	2)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Reverse engineering only"
+				value      	3)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Never synchronize"
+				value      	4)))))
+	    (object Attribute
+		tool       	"Cplusplus"
+		name       	"default__Module-Body"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"Synchronize"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"RevEngRootDirectory"
+			value      	"")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"RootPackage"
+			value      	"C++ Reverse Engineered")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"RevEngDirectoriesAsPackages"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"HeaderFileExtension"
+			value      	".h")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"ImplementationFileExtension"
+			value      	".cpp")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"NewHeaderFileDirectory"
+			value      	"")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"NewImplementationFileDirectory"
+			value      	"")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"FileCapitalization"
+			value      	("FileCapitalizationSet" 0))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CodeGenExtraDirectories"
+			value      	("CodeGenExtraDirectoriesSet" 0))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"StripClassPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"UseTabs"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"TabWidth"
+			value      	8)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"IndentWidth"
+			value      	4)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"AccessIndentation"
+			value      	-2)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CreateBackupFiles"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"ModelIdCommentRules"
+			value      	("ModelIdCommentRulesSet" 1))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CommentRules"
+			value      	("CommentRulesSet" 1))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"PageWidth"
+			value      	80)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"ClassMemberOrder"
+			value      	("MemberOrderSet" 1))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"OneParameterPerLine"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"NamespaceBraceStyle"
+			value      	("BraceStyleSet" 2))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"ClassBraceStyle"
+			value      	("BraceStyleSet" 2))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"FunctionBraceStyle"
+			value      	("BraceStyleSet" 2))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CommentStyleProperty"
+			value      	("CommentStyleSet" 1))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"Copyright"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"InitialHeaderIncludes"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"InitialBodyIncludes"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CodeGenExtraDirectoriesSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"None"
+				value      	0)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Namespaces"
+				value      	1)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Packages"
+				value      	2)))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"FileCapitalizationSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Same as model"
+				value      	0)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Lower case"
+				value      	1)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Upper case"
+				value      	2)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Lower case with underscores"
+				value      	3)))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CommentStyleSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"C++ Comment"
+				value      	1)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"C Comment"
+				value      	2)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"XML Comment"
+				value      	3)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"JavaDoc Comment"
+				value      	4)))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"BraceStyleSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"B1"
+				value      	1)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"B2"
+				value      	2)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"B3"
+				value      	3)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"B4"
+				value      	4)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"B5"
+				value      	5)))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"MemberOrderSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Public First"
+				value      	1)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Private First"
+				value      	2)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Order by kind"
+				value      	3)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Unordered"
+				value      	4)))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"ModelIdCommentRulesSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Code generation only"
+				value      	1)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Code generation and reverse engineering"
+				value      	2)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Never generate model IDs"
+				value      	3)))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CommentRulesSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Always synchronize"
+				value      	1)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Code generation only"
+				value      	2)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Reverse engineering only"
+				value      	3)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Never synchronize"
+				value      	4)))))
+	    (object Attribute
+		tool       	"Cplusplus"
+		name       	"default__Param"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CodeName"
+			value      	"")))
+	    (object Attribute
+		tool       	"Cplusplus"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"Synchronize"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CodeName"
+			value      	"")))
+	    (object Attribute
+		tool       	"Cplusplus"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"Synchronize"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CodeName"
+			value      	"")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"InitialCodeBody"
+			value      	"")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"Inline"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"GenerateFunctionBody"
+			value      	("GenerateFunctionBodySet" 2))
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"GenerateFunctionBodySet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"Default"
+				value      	2)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"True"
+				value      	1)
+			    (object Attribute
+				tool       	"Cplusplus"
+				name       	"False"
+				value      	0)))))
+	    (object Attribute
+		tool       	"Cplusplus"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"Synchronize"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CodeName"
+			value      	"")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"ImplementationType"
+			value      	"")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"HeaderSourceFile"
+			value      	"")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"BodySourceFile"
+			value      	"")))
+	    (object Attribute
+		tool       	"Cplusplus"
+		name       	"default__Category"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"CodeName"
+			value      	"")
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"IsNamespace"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Cplusplus"
+		name       	"default__Uses"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Cplusplus"
+			name       	"BodyReferenceOnly"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Cplusplus"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"ANSIConvert"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"CORBA"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"CORBA"
+		name       	"default__Project"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"CreateMissingDirectories"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"Editor"
+			value      	("EditorType" 100))
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"IncludePath"
+			value      	"")
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"StopOnError"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"EditorType"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"CORBA"
+				name       	"BuiltIn"
+				value      	100)
+			    (object Attribute
+				tool       	"CORBA"
+				name       	"WindowsShell"
+				value      	101)))
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"PathSeparator"
+			value      	"")
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"GenerateRoseID"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"NotShowRoseIDDlg"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"GenerateComments"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"UseTabs"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"UseSpaces"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"SpacingItems"
+			value      	4)
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"BraceOnNewLine"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"FundamentalTypes"
+			value      	"short; long; long long; unsigned short; unsigned long; unsigned long long; float; double; long double; char; boolean; wchar; octet; any;string; wstring; sequence; fixed; Object")))
+	    (object Attribute
+		tool       	"CORBA"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"ArrayDimensions"
+			value      	"")
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"ConstValue"
+			value      	"")
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"ImplementationType"
+			value      	"")
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"IsLocal"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"CORBA"
+		name       	"default__Module-Spec"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"AdditionalIncludes"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"CmIdentification"
+			value      	(value Text "  %X% %Q% %Z% %W%"))
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"CopyrightNotice"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"InclusionProtectionSymbol"
+			value      	"AUTO GENERATE")))
+	    (object Attribute
+		tool       	"CORBA"
+		name       	"default__Module-Body"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"AdditionalIncludes"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"CmIdentification"
+			value      	(value Text "  %X% %Q% %Z% %W%"))
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"CopyrightNotice"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"InclusionProtectionSymbol"
+			value      	"AUTO GENERATE")))
+	    (object Attribute
+		tool       	"CORBA"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"Context"
+			value      	"")
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"OperationIsOneWay"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"CORBA"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"ArrayDimensions"
+			value      	"")
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"CaseSpecifier"
+			value      	"")
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"IsReadOnly"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"Order"
+			value      	"")))
+	    (object Attribute
+		tool       	"CORBA"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"ArrayDimensions"
+			value      	"")
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"CaseSpecifier"
+			value      	"")
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"GenerateForwardReference"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"IsReadOnly"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"Order"
+			value      	"")
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"BoundedRoleType"
+			value      	("AssocTypeSet" 47))
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"AssocTypeSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"CORBA"
+				name       	"Array"
+				value      	24)
+			    (object Attribute
+				tool       	"CORBA"
+				name       	"Sequence"
+				value      	47)))))
+	    (object Attribute
+		tool       	"CORBA"
+		name       	"default__Uses"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"GenerateForwardReference"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"CORBA"
+		name       	"default__Param"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"Direction"
+			value      	("ParamDirectionTypeSet" 102))
+		    (object Attribute
+			tool       	"CORBA"
+			name       	"ParamDirectionTypeSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"CORBA"
+				name       	"in"
+				value      	102)
+			    (object Attribute
+				tool       	"CORBA"
+				name       	"inout"
+				value      	103)
+			    (object Attribute
+				tool       	"CORBA"
+				name       	"out"
+				value      	104)))))
+	    (object Attribute
+		tool       	"CORBA"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"default__Project"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"project"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TableCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ViewCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DomainCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"SPPackageCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TriggerCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IndexCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ConstraintCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"StoreProcedureCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"PrimaryKeyCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ForeignKeyCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"JoinCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TableSpaceCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"cONTAINERCounter"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TablePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ViewPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DomainPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TriggerPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IndexPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ConstraintPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"StoreProcedurePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"PrimaryKeyPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ForeignKeyPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TableSpacePrefix"
+			value      	"")))
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"default__Module-Spec"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"dmItem"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DMName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsDatabase"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TargetDatabase"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Location"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsTableSpace"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TableSpaceType"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsDeault"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"BufferPool"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ExtentSize"
+			value      	1)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"PrefetchSize"
+			value      	1)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"PageSize"
+			value      	4)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ManagedBy"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ContainerList"
+			value      	"")))
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"default__Category"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"dmItem"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DMName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"dmSchema"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"dmDomainPackage"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsSchema"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsDomainPackage"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsRootSchema"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsRootDomainPackage"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsSchemaPackage"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DatabaseID"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DBMS"
+			value      	"")))
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"dmItem"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DMName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsTable"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsView"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsDomain"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsSPPackage"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Synonymns"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TableSpaceID"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"SourceId"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"SourceType"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"CorrelationName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"SelectClause"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsUpdateable"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"CheckOption"
+			value      	"None")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsSnapShot"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsDistinct"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"PersistToServer"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsPackage"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsPackageWrapped"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsPackageBodyWrapped"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"dmItem"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DMName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Ordinal"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsIdentity"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsUnique"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"NullsAllowed"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Length"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Scale"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ColumnType"
+			value      	"Native")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ForBitData"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DefaultValueType"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DefaultValue"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"SourceId"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"SourceType"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"OID"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"default__Association"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"dmItem"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DMName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsRelationship"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"SourceId"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"SourceType"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"RIMethod"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ParentUpdateRule"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ParentUpdateRuleName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ParentDeleteRule"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ParentDeleteRuleName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ChildInsertRestrict"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ChildInsertRestrictName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ChildMultiplicity"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ChildMultiplicityName"
+			value      	"")))
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"dmItem"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DMName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ConstraintName"
+			value      	"")))
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"dmItem"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DMName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsConstraint"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ConstraintType"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsIndex"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsTrigger"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsStoredProcedure"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsCluster"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TableSpace"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"FillFactor"
+			value      	0)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"KeyList"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"CheckPredicate"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsUnique"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DeferalMode"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"InitialCheckTime"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"TriggerType"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsInsertEvent"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsUpdateEvent"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsDeleteEvent"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"RefOldTable"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"RefNewTable"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"RefOldRow"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"RefNewRow"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsRow"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"WhenClause"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Language"
+			value      	"SQL")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ProcType"
+			value      	"Procedure")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsDeterministic"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ParameterStyle"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ReturnedNull"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ExternalName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Length"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Scale"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ForBitData"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DefaultValue"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DefaultValueType"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsWrapped"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"default__Parameter"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"dmItem"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DMName"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsInParameter"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"IsOutParameter"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Ordinal"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Length"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"Scale"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"ForBitData"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DefaultValueType"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"DefaultValue"
+			value      	"")
+		    (object Attribute
+			tool       	"Data Modeler"
+			name       	"OperationID"
+			value      	"")))
+	    (object Attribute
+		tool       	"Data Modeler"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Data Modeler Communicator"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Deploy"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"framework"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Java"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Project"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"RootDir"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"CreateMissingDirectories"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"StopOnError"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"UsePrefixes"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"AutoSync"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"NotShowRoseIDDlg"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ShowCodegenDlg"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateRoseID"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateDefaultJ2EEJavadoc"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateDefaultReturnLine"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"JavadocDefaultAuthor"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"JavadocDefaultVersion"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"JavadocDefaultSince"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"UserDefineJavaDocTags"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"JavadocNumAsterisks"
+			value      	0)
+		    (object Attribute
+			tool       	"Java"
+			name       	"MaxNumChars"
+			value      	80)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Editor"
+			value      	("EditorType" 100))
+		    (object Attribute
+			tool       	"Java"
+			name       	"VM"
+			value      	("VMType" 200))
+		    (object Attribute
+			tool       	"Java"
+			name       	"ClassPath"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ReferenceClasspath"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"EditorType"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	"BuiltIn"
+				value      	100)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"VMType"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	"Sun"
+				value      	200)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"VAJavaWorkingFolder"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"InstanceVariablePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ClassVariablePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"DefaultAttributeDataType"
+			value      	"int")
+		    (object Attribute
+			tool       	"Java"
+			name       	"DefaultOperationReturnType"
+			value      	"void")
+		    (object Attribute
+			tool       	"Java"
+			name       	"NoClassCustomDlg"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GlobalImports"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"Java"
+			name       	"OpenBraceClassStyle"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"OpenBraceMethodStyle"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"UseTabs"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"UseSpaces"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"SpacingItems"
+			value      	3)
+		    (object Attribute
+			tool       	"Java"
+			name       	"RoseDefaultCommentStyle"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"AsteriskCommentStyle"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"JavaCommentStyle"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"JavadocAuthor"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"JavadocSince"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"JavadocVersion"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"JavadocExceptionTag"
+			value      	"@throws")
+		    (object Attribute
+			tool       	"Java"
+			name       	"BeanPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"BeanSuffix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"RemotePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"RemoteSuffix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"HomePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"HomeSuffix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"LocalPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"LocalSuffix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"LocalHomePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"LocalHomeSuffix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"PrimaryKeyPrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"PrimaryKeySuffix"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBDTDLocation"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletDTDLocation"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"DefaultEJBVersion"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"DefaultServletVersion"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"SourceControl"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"SCCSelected"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"SCCProjectSourceRoot"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"SCCProjectName"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"SCCComment"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"FundamentalType"
+			value      	"boolean; char; byte; short; int; long; float; double; Boolean; Byte; Character; Double; Float; Integer; Long; Object; Short; String; StringBuffer; Void; java.math.BigDecimal; java.math.BigInteger; java.sql.Date; java.sql.Time; java.sql.Timestamp; java.util.AbstractCollection; java.util.AbstractList;java.util.AbstractMap; java.util.AbstractSequentialList; java.util.AbstractSet; java.util.ArrayList; java.util.Arrays; java.util.BitSet; java.util.Calendar; java.util.Collections; java.util.Date; java.util.Date; java.util.Dictionary; java.util.EventObject; java.util.GregorianCalendar; java.util.HashMap; java.util.HashSet; java.util.Hashtable; java.util.LinkedList; java.util.ListResourceBundle; java.util.Locale; java.util.Observable; java.util.Properties; java.util.PropertyPermission; java.util.PropertyResourceBundle; java.util.Random; java.util.ResourceBundle; java.util.SimpleTimeZone; java.util.Stack; java.util.StringTokenizer; java.util.Timer; java.util.TimerTask; java.util.TimeZone; java.util.TreeMap; java.util.TreeSet; java.util.Vector; java.util.WeakHashMap;int; float; boolean; char; double; short; long; byte; ;Boolean; Byte; Character; Double; Float; Integer; Long; Object; Short; String; StringBuffer; Void; java.math.BigDecimal; java.math.BigInteger; java.sql.Date; java.sql.Time; java.sql.Timestamp; ;java.util.AbstractCollection; java.util.AbstractList; java.util.AbstractMap; java.util.AbstractSequentialList; java.util.AbstractSet; java.util.ArrayList; java.util.Arrays; java.util.BitSet; java.util.Calendar; java.util.Collections; java.util.Date; java.util.Dictionary; java.util.EventObject; java.util.GregorianCalendar; java.util.HashMap; java.util.HashSet; java.util.Hashtable; java.util.LinkedList; java.util.ListResourceBundle; java.util.Locale; java.util.Observable; java.util.Properties; java.util.PropertyPermission; java.util.PropertyResourceBundle; java.util.Random; java.util.ResourceBundle; java.util.ArrayList; java.util.SimpleTimeZone; java.util.Stack; java.util.StringTokenizer; java.util.Timer; java.util.TimerTask; java.util.TimerTask; java.util.TimeZone; java.util.TreeMap; java.util.TreeSet; java.util.Vector; java.util.WeakHashMap; ")))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"Final"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Static"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateDefaultConstructor"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ConstructorIs"
+			value      	("Ctor_Set" 62))
+		    (object Attribute
+			tool       	"Java"
+			name       	"Ctor_Set"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	"public"
+				value      	62)
+			    (object Attribute
+				tool       	"Java"
+				name       	"protected"
+				value      	63)
+			    (object Attribute
+				tool       	"Java"
+				name       	"private"
+				value      	64)
+			    (object Attribute
+				tool       	"Java"
+				name       	"package"
+				value      	65)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateFinalizer"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateStaticInitializer"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateInstanceInitializer"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateCode"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"DisableAutoSync"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ReadOnly"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Strictfp"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Java"
+		name       	"Default_Servlet__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletName"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletContextRef"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"IsSingleThread"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletInitParameter"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletInitParameterNames"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletIsSecure"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletRequestDispatcher"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletRequestDispatcherPath"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"DispatcherInclude"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"DispatcherForward"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletSecurityRoles"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletgetInfo"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletXMLFilePath"
+			value      	"")))
+	    (object Attribute
+		tool       	"Java"
+		name       	"Http_Servlet__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletRequestAttribute"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletRequestAttributesNames"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"MethodForRequestAttributes"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletRequestParameter"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletRequestParameterNames"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"MethodForRequestParameters"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletHeader"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletHeaderNames"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"MethodForHeaders"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletIntHeader"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletDateHeader"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletCookie"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"MethodForCookie"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"ServletContentType"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateHTML"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Java"
+		name       	"Default_EJB__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"Generate_XML_DD"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBCmpField"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBEnvironmentProperties"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBCnxFactory"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBReferences"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBSecurityRoles"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBNameInJAR"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBSessionType"
+			value      	("EJBSessionType_Set" 200))
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBSessionType_Set"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	""
+				value      	200)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Stateless"
+				value      	201)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Stateful"
+				value      	202)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBTransactionType"
+			value      	("EJBTransactionType_Set" 211))
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBTransactionType_Set"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	"Container"
+				value      	211)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Bean"
+				value      	212)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBPersistenceType"
+			value      	("EJBPersistenceType_Set" 220))
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBPersistenceType_Set"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	""
+				value      	220)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Bean"
+				value      	221)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Container"
+				value      	222)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBReentrant"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBSessionSync"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBVersion"
+			value      	("EJBVersion_Set" 230))
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBVersion_Set"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	"2.0"
+				value      	230)
+			    (object Attribute
+				tool       	"Java"
+				name       	"1.x"
+				value      	231)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"EJBXMLFilePath"
+			value      	"")))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Module-Spec"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"CmIdentification"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"Java"
+			name       	"CopyrightNotice"
+			value      	(value Text ""))))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Module-Body"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"CmIdentification"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"Java"
+			name       	"CopyrightNotice"
+			value      	(value Text ""))))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"Abstract"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Static"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Final"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Native"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Synchronized"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateFullyQualifiedReturn"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"ReplaceExistingCode"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Strictfp"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"Final"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Transient"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Volatile"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"PropertyType"
+			value      	("BeanProperty_Set" 71))
+		    (object Attribute
+			tool       	"Java"
+			name       	"BeanProperty_Set"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	"Not A Property"
+				value      	71)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Simple"
+				value      	72)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Bound"
+				value      	73)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Constrained"
+				value      	74)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"IndividualChangeMgt"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Read/Write"
+			value      	("Read/Write_Set" 81))
+		    (object Attribute
+			tool       	"Java"
+			name       	"Read/Write_Set"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	"Read & Write"
+				value      	81)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Read Only"
+				value      	82)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Write Only"
+				value      	83)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateFullyQualifiedTypes"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Java"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Java"
+			name       	"ContainerClass"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"InitialValue"
+			value      	"")
+		    (object Attribute
+			tool       	"Java"
+			name       	"Final"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Transient"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Volatile"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"PropertyType"
+			value      	("BeanProperty_Set" 71))
+		    (object Attribute
+			tool       	"Java"
+			name       	"BeanProperty_Set"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	"Not A Property"
+				value      	71)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Simple"
+				value      	72)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Bound"
+				value      	73)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Constrained"
+				value      	74)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"IndividualChangeMgt"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"Read/Write"
+			value      	("Read/Write_Set" 81))
+		    (object Attribute
+			tool       	"Java"
+			name       	"Read/Write_Set"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Java"
+				name       	"Read & Write"
+				value      	81)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Read Only"
+				value      	82)
+			    (object Attribute
+				tool       	"Java"
+				name       	"Write Only"
+				value      	83)))
+		    (object Attribute
+			tool       	"Java"
+			name       	"GenerateFullyQualifiedTypes"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Java"
+			name       	"IsNavigable"
+			value      	TRUE)))
+	    (object Attribute
+		tool       	"Java"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Oracle8"
+		name       	"propertyId"
+		value      	"360000002")
+	    (object Attribute
+		tool       	"Oracle8"
+		name       	"default__Project"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"DDLScriptFilename"
+			value      	"DDL1.SQL")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"DropClause"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"PrimaryKeyColumnName"
+			value      	"_ID")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"PrimaryKeyColumnType"
+			value      	"NUMBER(5,0)")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"SchemaNamePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"SchemaNameSuffix"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"TableNamePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"TableNameSuffix"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"TypeNamePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"TypeNameSuffix"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"ViewNamePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"ViewNameSuffix"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"VarrayNamePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"VarrayNameSuffix"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"NestedTableNamePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"NestedTableNameSuffix"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"ObjectTableNamePrefix"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"ObjectTableNameSuffix"
+			value      	"")))
+	    (object Attribute
+		tool       	"Oracle8"
+		name       	"default__Module-Spec"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"IsSchema"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Oracle8"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"OID"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"WhereClause"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"CheckConstraint"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"CollectionTypeLength"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"CollectionTypePrecision"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"CollectionTypeScale"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"CollectionOfREFS"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"Oracle8"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"MethodKind"
+			value      	("MethodKindSet" 1903))
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"OverloadID"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"OrderNumber"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"IsReadNoDataState"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"IsReadNoProcessState"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"IsWriteNoDataState"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"IsWriteNoProcessState"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"IsSelfish"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"TriggerType"
+			value      	("TriggerTypeSet" 1801))
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"TriggerEvent"
+			value      	("TriggerEventSet" 1601))
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"TriggerText"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"TriggerReferencingNames"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"TriggerForEach"
+			value      	("TriggerForEachSet" 1701))
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"TriggerWhenClause"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"MethodKindSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"MapMethod"
+				value      	1901)
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"OrderMethod"
+				value      	1902)
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"Function"
+				value      	1903)
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"Procedure"
+				value      	1904)
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"Operator"
+				value      	1905)
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"Constructor"
+				value      	1906)
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"Destructor"
+				value      	1907)
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"Trigger"
+				value      	1908)
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"Calculated"
+				value      	1909)))
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"TriggerTypeSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"AFTER"
+				value      	1801)
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"BEFORE"
+				value      	1802)
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"INSTEAD OF"
+				value      	1803)))
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"TriggerForEachSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"ROW"
+				value      	1701)
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"STATEMENT"
+				value      	1702)))
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"TriggerEventSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"INSERT"
+				value      	1601)
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"UPDATE"
+				value      	1602)
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"DELETE"
+				value      	1603)
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"INSERT OR UPDATE"
+				value      	1604)
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"INSERT OR DELETE"
+				value      	1605)
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"UPDATE OR DELETE"
+				value      	1606)
+			    (object Attribute
+				tool       	"Oracle8"
+				name       	"INSERT OR UPDATE OR DELETE"
+				value      	1607)))))
+	    (object Attribute
+		tool       	"Oracle8"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"OrderNumber"
+			value      	"")))
+	    (object Attribute
+		tool       	"Oracle8"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"OrderNumber"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"IsUnique"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"NullsAllowed"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"Length"
+			value      	"")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"Precision"
+			value      	"2")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"Scale"
+			value      	"6")
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"IsIndex"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"IsPrimaryKey"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"CompositeUnique"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"Oracle8"
+			name       	"CheckConstraint"
+			value      	"")))
+	    (object Attribute
+		tool       	"Oracle8"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Model Integrator"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Rose Web Publisher"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"TopLink"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"COM"
+		name       	"propertyId"
+		value      	"783606378")
+	    (object Attribute
+		tool       	"COM"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"COM"
+			name       	"TypeKinds"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"COM"
+				name       	"enum"
+				value      	100)
+			    (object Attribute
+				tool       	"COM"
+				name       	"record"
+				value      	101)
+			    (object Attribute
+				tool       	"COM"
+				name       	"module"
+				value      	102)
+			    (object Attribute
+				tool       	"COM"
+				name       	"interface"
+				value      	103)
+			    (object Attribute
+				tool       	"COM"
+				name       	"dispinterface"
+				value      	104)
+			    (object Attribute
+				tool       	"COM"
+				name       	"coclass"
+				value      	105)
+			    (object Attribute
+				tool       	"COM"
+				name       	"alias"
+				value      	106)
+			    (object Attribute
+				tool       	"COM"
+				name       	"union"
+				value      	107)
+			    (object Attribute
+				tool       	"COM"
+				name       	"max"
+				value      	108)
+			    (object Attribute
+				tool       	"COM"
+				name       	"(none)"
+				value      	109)))
+		    (object Attribute
+			tool       	"COM"
+			name       	"Generate"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"COM"
+			name       	"kind"
+			value      	("TypeKinds" 109))
+		    (object Attribute
+			tool       	"COM"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"version"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"helpstring"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"helpcontext"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"attributes"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"dllname"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"alias"
+			value      	"")))
+	    (object Attribute
+		tool       	"COM"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"COM"
+			name       	"Generate"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"COM"
+			name       	"id"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"helpstring"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"attributes"
+			value      	"")))
+	    (object Attribute
+		tool       	"COM"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"COM"
+			name       	"Generate"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"COM"
+			name       	"id"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"helpstring"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"attributes"
+			value      	"")))
+	    (object Attribute
+		tool       	"COM"
+		name       	"default__Module-Spec"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"COM"
+			name       	"Generate"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"COM"
+			name       	"filename"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"library"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"uuid"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"version"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"helpstring"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"helpfile"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"helpcontext"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"lcid"
+			value      	"")
+		    (object Attribute
+			tool       	"COM"
+			name       	"attributes"
+			value      	"")))
+	    (object Attribute
+		tool       	"COM"
+		name       	"default__Param"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"COM"
+			name       	"attributes"
+			value      	"")))
+	    (object Attribute
+		tool       	"COM"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"VC++"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"VC++"
+		name       	"default__Project"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"VC++"
+			name       	"UpdateATL"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"SmartPointersOnAssoc"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"GenerateImports"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"PutImportsIn"
+			value      	"stdafx.h")
+		    (object Attribute
+			tool       	"VC++"
+			name       	"FullPathInImports"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"UseImportAttributes"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"ImportAttributes"
+			value      	"no_namespace named_guids")
+		    (object Attribute
+			tool       	"VC++"
+			name       	"ImportProjTypeLib"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"DefaultTypeLib"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"TypeLibLocation"
+			value      	"")
+		    (object Attribute
+			tool       	"VC++"
+			name       	"CompileProjTypeLib"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"IdlInterfaceAttributes"
+			value      	(value Text 
+|endpoint("")
+|local
+|object
+|pointer_default()
+|uuid("")
+|version("")
+|encode
+|decode
+|auto_handle
+|implicit_handle("")
+|code
+|nocode
+			))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"IdlCoClassAttributes"
+			value      	(value Text 
+|uuid("")
+|helpstring("")
+|helpcontext("")
+|licensed
+|version("")
+|control
+|hidden
+|appobject
+			))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"IdlCoClassInterfaceAttributes"
+			value      	(value Text 
+|default
+|source
+			))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"IdlParameterAttributes"
+			value      	(value Text 
+|in
+|out
+|retval
+			))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"IdlMethodAttributes"
+			value      	(value Text 
+|id(1)
+|helpstring("")
+|call_as("")
+|callback
+|helpcontext("")
+|hidden
+|local
+|restricted
+|source
+|vararg
+			))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"IdlPropertyAttributes"
+			value      	(value Text 
+|id()
+|helpstring("")
+|call_as("")
+|helpcontext("")
+|hidden
+|local
+|restricted
+|source
+|vararg
+|bindable
+|defaultbind
+|defaultcallelem
+|displaybind
+|immediatebind
+|nonbrowseable
+|requestedit
+			))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"RvcPtyVersion"
+			value      	"1.4")
+		    (object Attribute
+			tool       	"VC++"
+			name       	"ModelIDStyle"
+			value      	2)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"DocStyle"
+			value      	1)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"GenerateIncludes"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"ApplyPattern"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"CreateBackupFiles"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"SupportCodeName"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"DocRevEngineer"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"CreateOverviewDiagrams"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"UpdateModelIDsInCode"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"AttributeTypes"
+			value      	(value Text 
+|attr1=bool
+|attr2=short
+|attr3=int
+|attr4=long
+|attr5=char
+|attr6=float
+|attr7=double
+|attr8=void
+|attr9=clock_t
+|attr10=_complex
+|attr11=_dev_t
+|attr12=div_t
+|attr13=_exception
+|attr14=FILE
+|attr15=_finddata_t
+|attr16=_FPIEEE_RECORD
+|attr17=fpos_t
+|attr18=_HEAPINFO
+|attr19=jmp_buf
+|attr20=lconv
+|attr21=ldiv_t
+|attr22=_off_t
+|attr23=_onexit_t
+|attr24=_PNH
+|attr25=ptrdiff_t
+|attr26=sig_atomic_t
+|attr27=size_t
+|attr28=_stat
+|attr29=time_t
+|attr30=_timeb
+|attr31=tm
+|attr32=_utimbuf
+|attr33=va_list
+|attr34=wchar_t
+|attr35=wctrans_t
+|attr36=wctype_t
+|attr37=_wfinddata_t
+|attr38=_wfinddatai64_t
+|attr39=wint_t
+|attr40=ABORTPROC
+|attr41=ACMDRIVERENUMCB
+|attr42=ACMDRIVERPROC
+|attr43=ACMFILTERCHOOSEHOOKPROC
+|attr44=ACMFILTERENUMCB
+|attr45=ACMFILTERTAGENUMCB
+|attr46=ACMFORMATCHOOSEHOOKPROC
+|attr47=ACMFORMATENUMCB
+|attr48=ACMFORMATTAGENUMCB
+|attr49=APPLET_PROC
+|attr50=ATOM
+|attr51=BOOL
+|attr52=BOOLEAN
+|attr53=BYTE
+|attr54=CALINFO_ENUMPROC
+|attr55=CALLBACK
+|attr56=CHAR
+|attr57=COLORREF
+|attr58=CONST
+|attr59=CRITICAL_SECTION
+|attr60=CTRYID
+|attr61=DATEFMT_ENUMPROC
+|attr62=DESKTOPENUMPROC
+|attr63=DLGPROC
+|attr64=DRAWSTATEPROC
+|attr65=DWORD
+|attr66=EDITWORDBREAKPROC
+|attr67=ENHMFENUMPROC
+|attr68=ENUMRESLANGPROC
+|attr69=ENUMRESNAMEPROC
+|attr70=ENUMRESTYPEPROC
+|attr71=FARPROC
+|attr72=FILE_SEGMENT_ELEMENT
+|attr73=FLOAT
+|attr74=FONTENUMPROC
+|attr75=GOBJENUMPROC
+|attr76=GRAYSTRINGPROC
+|attr77=HACCEL
+|attr78=HANDLE
+|attr79=HBITMAP
+|attr80=HBRUSH
+|attr81=HCOLORSPACE
+|attr82=HCONV
+|attr83=HCONVLIST
+|attr84=HCURSOR
+|attr85=HDC
+|attr86=HDDEDATA
+|attr87=HDESK
+|attr88=HDROP
+|attr89=HDWP
+|attr90=HENHMETAFILE
+|attr91=HFILE
+|attr92=HFONT
+|attr93=HGDIOBJ
+|attr94=HGLOBAL
+|attr95=HHOOK
+|attr96=HICON
+|attr97=HIMAGELIST
+|attr98=HIMC
+|attr99=HINSTANCE
+|attr100=HKEY
+|attr101=HKL
+|attr102=HLOCAL
+|attr103=HMENU
+|attr104=HMETAFILE
+|attr105=HMODULE
+|attr106=HMONITOR
+|attr107=HOOKPROC
+|attr108=HPALETTE
+|attr109=HPEN
+|attr110=HRGN
+|attr111=HRSRC
+|attr112=HSZ
+|attr113=HTREEITEM
+|attr114=HWINSTA
+|attr115=HWND
+|attr116=INT
+|attr117=IPADDR
+|attr118=LANGID
+|attr119=LCID
+|attr120=LCSCSTYPE
+|attr121=LCSGAMUTMATCH
+|attr122=LCTYPE
+|attr123=LINEDDAPROC
+|attr124=LOCALE_ENUMPROC
+|attr125=LONG
+|attr126=LONGLONG
+|attr127=LPARAM
+|attr128=LPBOOL
+|attr129=LPBYTE
+|attr130=LPCCHOOKPROC
+|attr131=LPCFHOOKPROC
+|attr132=LPCOLORREF
+|attr133=LPCRITICAL_SECTION
+|attr134=LPCSTR
+|attr135=LPCTSTR
+|attr136=LPCVOID
+|attr137=LPCWSTR
+|attr138=LPDWORD
+|attr139=LPFIBER_START_ROUTINE
+|attr140=LPFRHOOKPROC
+|attr141=LPHANDLE
+|attr142=LPHANDLER_FUNCTION
+|attr143=LPINT
+|attr144=LPLONG
+|attr145=LPOFNHOOKPROC
+|attr146=LPPAGEPAINTHOOK
+|attr147=LPPAGESETUPHOOK
+|attr148=LPPRINTHOOKPROC
+|attr149=LPPROGRESS_ROUTINE
+|attr150=LPSETUPHOOKPROC
+|attr151=LPSTR
+|attr152=LPSTREAM
+|attr153=LPTHREAD_START_ROUTINE
+|attr154=LPTSTR
+|attr155=LPVOID
+|attr156=LPWORD
+|attr157=LPWSTR
+|attr158=LRESULT
+|attr159=LUID
+|attr160=PBOOL
+|attr161=PBOOLEAN
+|attr162=PBYTE
+|attr163=PCHAR
+|attr164=PCRITICAL_SECTION
+|attr165=PCSTR
+|attr166=PCTSTR
+|attr167=PCWCH
+|attr168=PCWSTR
+|attr169=PDWORD
+|attr170=PFLOAT
+|attr171=PFNCALLBACK
+|attr172=PHANDLE
+|attr173=PHANDLER_ROUTINE
+|attr174=PHKEY
+|attr175=PINT
+|attr176=PLCID
+|attr177=PLONG
+|attr178=PLUID
+|attr179=PROPENUMPROC
+|attr180=PROPENUMPROCEX
+|attr181=PSHORT
+|attr182=PSTR
+|attr183=PTBYTE
+|attr184=PTCHAR
+|attr185=PTIMERAPCROUTINE
+|attr186=PTSTR
+|attr187=PUCHAR
+|attr188=PUINT
+|attr189=PULONG
+|attr190=PUSHORT
+|attr191=PVOID
+|attr192=PWCHAR
+|attr193=PWORD
+|attr194=PWSTR
+|attr195=REGISTERWORDENUMPROC
+|attr196=REGSAM
+|attr197=SC_HANDLE
+|attr198=SC_LOCK
+|attr199=SENDASYNCPROC
+|attr200=SERVICE_STATUS_HANDLE
+|attr201=SHORT
+|attr202=TBYTE
+|attr203=TCHAR
+|attr204=TIMEFMT_ENUMPROC
+|attr205=TIMERPROC
+|attr206=UCHAR
+|attr207=UINT
+|attr208=ULONG
+|attr209=ULONGLONG
+|attr210=UNSIGNED
+|attr211=USHORT
+|attr212=VOID
+|attr213=WCHAR
+|attr214=WINAPI
+|attr215=WINSTAENUMPROC
+|attr216=WNDENUMPROC
+|attr217=WNDPROC
+|attr218=WORD
+|attr219=WPARAM
+|attr220=YIELDPROC
+|attr221=CPoint
+|attr222=CRect
+|attr223=CSize
+|attr224=CString
+|attr225=CTime
+|attr226=CTimeSpan
+|attr227=CCreateContext
+|attr228=CMemoryState
+|attr229=COleSafeArray
+|attr230=CPrintInfo
+|attr231=HRESULT
+			))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"Containers"
+			value      	(value Text 
+|cont1=CArray<$TYPE, $TYPE&>
+|cont2=CByteArray
+|cont3=CDWordArray
+|cont4=CObArray
+|cont5=CPtrArray
+|cont6=CStringArray
+|cont7=CUIntArray
+|cont8=CWordArray
+|cont9=CList<$TYPE, $TYPE&>
+|cont10=CPtrList
+|cont11=CObList
+|cont12=CStringList
+|cont13=CMapWordToPtr
+|cont14=CMapPtrToWord
+|cont15=CMapPtrToPtr
+|cont16=CMapWordToOb
+|cont17=CMapStringToPtr
+|cont18=CMapStringToOb
+|cont19=CMapStringToString
+|cont20=CTypedPtrArray<CPtrArray, $TYPE*>
+|cont21=CTypedPtrArray<CObArray, $TYPE*>
+|cont22=CTypedPtrList<CObList, $TYPE*>
+|cont23=CTypedPtrList<CPtrList, $TYPE*>
+|cont24=CComObject<$TYPE>
+|cont25=CComPtr<$TYPE>
+|cont26=CComQIPtr<$TYPE>
+|cont27=CComQIPtr<$TYPE, IID*>
+			))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"ClassMethods"
+			value      	(value Text 
+|*_body=// ToDo: Add your specialized code here and/or call the base class
+|cm1=$NAME()
+|cm2=$NAME(orig:const $NAME&)
+|cm3=<<virtual>> ~$NAME()
+|cm4=operator=(rhs:$NAME&):$NAME&
+|cm4_body=// ToDo: Add your specialized code here and/or call the base class||return rhs;
+|cm5=<<const>> operator==(rhs:const $NAME&):bool
+|cm5_body=// ToDo: Add your specialized code here and/or call the base class||return false;
+|cm6=<<const>> operator!=(rhs:$NAME&):bool
+|cm6_body=// ToDo: Add your specialized code here and/or call the base class||return false;
+|cm7=<<const>> operator<(rhs:$NAME&):bool
+|cm7_body=// ToDo: Add your specialized code here and/or call the base class||return false;
+|cm8=<<const>> operator>(rhs:$NAME&):bool
+|cm8_body=// ToDo: Add your specialized code here and/or call the base class||return false;
+|cm9=<<const>> operator<=(rhs:$NAME&):bool
+|cm9_body=// ToDo: Add your specialized code here and/or call the base class||return false;
+|cm10=<<const>> operator>=(rhs:$NAME&):bool
+|cm10_body=// ToDo: Add your specialized code here and/or call the base class||return false;
+|cm11=<<friend>> operator>>(i:istream&, rhs:$NAME&):istream&
+|cm11_body=// ToDo: Add your specialized code here and/or call the base class||return i;
+|cm12=<<friend>> operator<<(o:ostream&, rhs:const $NAME&):ostream&
+|cm12_body=// ToDo: Add your specialized code here and/or call the base class||return o;
+			))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"Accessors"
+			value      	(value Text 
+|agf=<<const>> get_$BASICNAME():const $TYPE
+|agf_body=return $NAME;
+|asf=set_$BASICNAME(value:$TYPE):void
+|asf_body=$NAME = value;|return;
+|agv=<<const>> get_$BASICNAME():const $TYPE&
+|agv_body=return $NAME;
+|asv=set_$BASICNAME(value:$TYPE&):void
+|asv_body=$NAME = value;|return;
+|agp=<<const>> get_$BASICNAME():const $TYPE
+|agp_body=return $NAME;
+|asp=set_$BASICNAME(value:$TYPE):void
+|asp_body=$NAME = value;|return;
+|agr=<<const>> get_$BASICNAME():const $TYPE
+|agr_body=return $NAME;
+|asr=set_$BASICNAME(value:$TYPE):void
+|asr_body=$NAME = value;|return;
+|aga=<<const>> get_$BASICNAME(index:int):const $TYPE
+|aga_body=return $NAME[index];
+|asa=set_$BASICNAME(index:int, value:$TYPE):void
+|asa_body=$NAME[index] = value;|return;
+			))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"Conditionals"
+			value      	(value Text 
+|*_decl=#ifdef _DEBUG
+|*_base=CObject
+|cond1=<<virtual, const>> AssertValid():void
+|cond1_body=$SUPERNAME::AssertValid();
+|cond2=<<virtual, const>> Dump(dc:CDumpContext&):void
+|cond2_body=$SUPERNAME::Dump(dc);
+			))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"Patterns"
+			value      	(value Text 
+|patrn1=cm1,cm3,cond1,cond2
+|Patrn1_name=Default
+			))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"AtlClassPrefix"
+			value      	"C")
+		    (object Attribute
+			tool       	"VC++"
+			name       	"AtlInterfacePrefix"
+			value      	"I")
+		    (object Attribute
+			tool       	"VC++"
+			name       	"AtlTypeDescription"
+			value      	"Class")
+		    (object Attribute
+			tool       	"VC++"
+			name       	"DefaultLogicalPackage"
+			value      	"$language Reverse Engineered/$component")
+		    (object Attribute
+			tool       	"VC++"
+			name       	"DefaultComponentPackage"
+			value      	"")))
+	    (object Attribute
+		tool       	"VC++"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"VC++"
+			name       	"Generate"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"HeaderFileName"
+			value      	"")
+		    (object Attribute
+			tool       	"VC++"
+			name       	"CodeFileName"
+			value      	"")))
+	    (object Attribute
+		tool       	"VC++"
+		name       	"default__Module-Spec"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"VC++"
+			name       	"InternalMap"
+			value      	(value Text 
+|*:AUTO:AUTO
+|
+			))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"ExportMap"
+			value      	(value Text 
+|*:AUTO:AUTO
+|
+			))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"InitialSourceIncludes"
+			value      	(value Text 
+|"stdafx.h"
+			))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"InitialHeaderIncludes"
+			value      	(value Text ""))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"Copyright"
+			value      	(value Text "Copyright (C) 1991 - 1999 Rational Software Corporation"))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"KindSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"VC++"
+				name       	"(none)"
+				value      	300)
+			    (object Attribute
+				tool       	"VC++"
+				name       	"DLL"
+				value      	301)
+			    (object Attribute
+				tool       	"VC++"
+				name       	"EXE"
+				value      	302)
+			    (object Attribute
+				tool       	"VC++"
+				name       	"MIDL"
+				value      	303)))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"Kind"
+			value      	("KindSet" 300))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"BodyExtensions"
+			value      	(value Text 
+|.cpp
+|.cxx
+|.inl
+			))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"HeaderExtensions"
+			value      	(value Text 
+|.h
+|.hpp
+|.hxx
+|inl
+			))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"ProjectFolders"
+			value      	(value Text 
+|Source Files
+|Header Files
+			))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"UsePathMap"
+			value      	FALSE)))
+	    (object Attribute
+		tool       	"VC++"
+		name       	"default__Role"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"VC++"
+			name       	"Const"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"Generate"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"InitialValue"
+			value      	"")))
+	    (object Attribute
+		tool       	"VC++"
+		name       	"default__Uses"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"VC++"
+			name       	"Generate"
+			value      	TRUE)))
+	    (object Attribute
+		tool       	"VC++"
+		name       	"default__Category"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"VC++"
+			name       	"IsDirectory"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"Directory"
+			value      	"")))
+	    (object Attribute
+		tool       	"VC++"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"VC++"
+			name       	"Generate"
+			value      	TRUE)))
+	    (object Attribute
+		tool       	"VC++"
+		name       	"default__Operation"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"VC++"
+			name       	"GenerateSet"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"VC++"
+				name       	"DoNotGenerate"
+				value      	400)
+			    (object Attribute
+				tool       	"VC++"
+				name       	"DeclareAndDefine"
+				value      	401)
+			    (object Attribute
+				tool       	"VC++"
+				name       	"DeclareOnly"
+				value      	402)))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"Generate"
+			value      	("GenerateSet" 401))
+		    (object Attribute
+			tool       	"VC++"
+			name       	"Inline"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"VC++"
+			name       	"DefaultBody"
+			value      	(value Text ""))))
+	    (object Attribute
+		tool       	"VC++"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Version Control"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"VisualStudio"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"Web Modeler"
+		name       	"HiddenTool"
+		value      	FALSE)
+	    (object Attribute
+		tool       	"XML_DTD"
+		name       	"propertyId"
+		value      	"809135966")
+	    (object Attribute
+		tool       	"XML_DTD"
+		name       	"default__Project"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"XML_DTD"
+			name       	"CreateMissingDirectories"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"XML_DTD"
+			name       	"Editor"
+			value      	("EditorType" 100))
+		    (object Attribute
+			tool       	"XML_DTD"
+			name       	"StopOnError"
+			value      	TRUE)
+		    (object Attribute
+			tool       	"XML_DTD"
+			name       	"EditorType"
+			value      	(list Attribute_Set
+			    (object Attribute
+				tool       	"XML_DTD"
+				name       	"BuiltIn"
+				value      	100)
+			    (object Attribute
+				tool       	"XML_DTD"
+				name       	"WindowsShell"
+				value      	101)))))
+	    (object Attribute
+		tool       	"XML_DTD"
+		name       	"default__Class"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"XML_DTD"
+			name       	"Entity_SystemID"
+			value      	"")
+		    (object Attribute
+			tool       	"XML_DTD"
+			name       	"Entity_PublicID"
+			value      	"")
+		    (object Attribute
+			tool       	"XML_DTD"
+			name       	"NotationValue"
+			value      	"")
+		    (object Attribute
+			tool       	"XML_DTD"
+			name       	"InternalValue"
+			value      	"")
+		    (object Attribute
+			tool       	"XML_DTD"
+			name       	"ParameterEntity"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"XML_DTD"
+			name       	"ExternalEntity"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"XML_DTD"
+			name       	"Notation_SystemID"
+			value      	"")
+		    (object Attribute
+			tool       	"XML_DTD"
+			name       	"Notation_PublicID"
+			value      	"")))
+	    (object Attribute
+		tool       	"XML_DTD"
+		name       	"default__Attribute"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"XML_DTD"
+			name       	"DefaultDeclType"
+			value      	"")))
+	    (object Attribute
+		tool       	"XML_DTD"
+		name       	"default__Module-Spec"
+		value      	(list Attribute_Set
+		    (object Attribute
+			tool       	"XML_DTD"
+			name       	"Assign All"
+			value      	FALSE)
+		    (object Attribute
+			tool       	"XML_DTD"
+			name       	"ComponentPath"
+			value      	"")))
+	    (object Attribute
+		tool       	"XML_DTD"
+		name       	"HiddenTool"
+		value      	FALSE))
+	quid       	"5149A23A011A"))
